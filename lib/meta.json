@@ -1,0 +1,664 @@
+{
+ "ghost-filter-cart-battery": {
+  "name": "Ghosty + Filter Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A 510-thread cart battery and a replaceable exhale filter in one ghost-shaped, glow-in-the-dark body. About 3 inches tall without a cart, with USB-C charging and one replaceable filter included.",
+  "features": [
+   "Built-in replaceable cloud filter",
+   "Glows in the dark",
+   "Universal 510 thread",
+   "USB-C rechargeable"
+  ],
+  "badge": "Seasonal"
+ },
+ "controller-adapter-510-cart-battery": {
+  "name": "Controller Adapter 510 Cart Battery",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "Turn your gaming controller into a home base for your aromatherapy cartridge. A compact 510 battery with a magnetic mount that attaches right to your controller.",
+  "features": [
+   "510 thread compatible",
+   "Magnetic controller mounting system",
+   "Works with most gaming controllers",
+   "Four voltages: 2.5V, 2.7V, 3.0V, 3.6V"
+  ],
+  "badge": "New",
+  "look": "Controller"
+ },
+ "herb-grinder-slot-machine": {
+  "name": "Herb Grinder Slot Machine",
+  "cats": [
+   "accessories",
+   "novelty"
+  ],
+  "intro": "A functional 2-inch grinder packed inside a miniature casino-style slot machine. The removable metal grinder has sharp diamond-cut teeth for a consistent grind.",
+  "features": [
+   "Working slot machine with LED lights",
+   "Removable 2-inch metal grinder",
+   "Diamond-cut teeth",
+   "Screened collection drawer"
+  ]
+ },
+ "balisong-butterfly-cart-battery": {
+  "name": "Balisong Butterfly Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "The standard 510 battery in an entirely different form. A balisong-inspired handle flips open and closed while keeping your cart protected between uses.",
+  "features": [
+   "Flip-open butterfly handle",
+   "Protects your cart between uses",
+   "Textured handle inserts",
+   "Universal 510 thread"
+  ],
+  "badge": "New"
+ },
+ "foojamin-cart-battery-mystery-drop-limited-edition": {
+  "name": "Foojamin Mystery Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "The pocket-sized 510 battery with serious character. About 3 inches tall, each collectible figure has a built-in power button, standard 510 thread and USB-C charging. Every sealed box holds one of five colors.",
+  "features": [
+   "1 of 5 mystery colors per box",
+   "Built-in power button",
+   "Standard 510 thread",
+   "USB-C charging"
+  ],
+  "badge": "Mystery drop"
+ },
+ "cup-cart-510-battery-by-mrs-puff": {
+  "name": "Cup Cart 510 Battery by Mrs. Puff",
+  "cats": [
+   "batteries",
+   "novelty",
+   "discreet"
+  ],
+  "intro": "A compact 510 battery inspired by your favorite handled tumbler. Lightweight, with a built-in side handle, and adjustable output from 2.0V to 3.6V in 0.2V steps.",
+  "features": [
+   "Tumbler design with side handle",
+   "2.0V to 3.6V in 0.2V steps",
+   "Digital voltage display",
+   "Twist-on 510 thread"
+  ],
+  "badge": "New",
+  "cut": "/assets/cut/cup.webp",
+  "look": "Tumbler"
+ },
+ "rocket-pop-cart-battery": {
+  "name": "Rocket Pop Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "Bold red, white and blue energy anywhere. A rechargeable battery with an eye-catching design that doubles as a satisfying fidget spinner.",
+  "features": [
+   "Red, white and blue Rocket Pop design",
+   "Standard 510-thread carts",
+   "USB-C rechargeable",
+   "Built-in fidget spin",
+   "About 8 inches tall"
+  ],
+  "badge": "Limited"
+ },
+ "basketball-cart-battery-limited-edition": {
+  "name": "Basketball Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A full-court twist on your everyday setup. A collectible mini basketball battery, compact and rechargeable, with a standard 510-thread connection. Just 2.5 inches tall.",
+  "features": [
+   "Mini basketball design",
+   "Standard 510 thread",
+   "USB-C rechargeable",
+   "2.5 inches tall"
+  ],
+  "badge": "Limited"
+ },
+ "tung-tung-sahur-cart-battery": {
+  "name": "Tung Tung Sahur 510 Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "Everything you love about Smyle Labs, turned into a collectible that actually hits. A full character body, oversized eyes and a bat in hand.",
+  "features": [
+   "Universal 510 thread",
+   "USB-C rechargeable",
+   "Full character design",
+   "Moveable arms + accessories",
+   "Stands 7.5 inches tall"
+  ],
+  "badge": "Limited"
+ },
+ "torch-penjamin-cart-battery-limited-edition": {
+  "name": "Torch Penjamin Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A bold, pixel-inspired 510 cart battery in a compact 4.4-inch form. A game-style look with everyday, reliable performance.",
+  "features": [
+   "Pixel game-style design",
+   "4.4-inch compact form",
+   "All standard 510 carts",
+   "USB-C charging"
+  ],
+  "badge": "Limited"
+ },
+ "tnt-penjamin-cart-battery-limited-edition": {
+  "name": "TNT Penjamin Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A pixel-perfect cart battery. Just 2.1 inches wide, with a retro gaming, TNT-inspired design and a universal 510 thread. Charges via USB-C.",
+  "features": [
+   "Palm-sized, 2.1 inches wide",
+   "Retro pixel TNT design",
+   "Universal 510 thread",
+   "USB-C charging"
+  ],
+  "badge": "Limited"
+ },
+ "moon-wand-cart-battery-limited-edition": {
+  "name": "Moon Wand Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A crescent moon 510 cart battery that turns your everyday sesh into a full sensory experience, with a pink chrome orb, jeweled heart and gold wing details.",
+  "features": [
+   "Universal 510 thread on top of the orb",
+   "Built-in sound speaker and sound button",
+   "LED lights glow through the orb",
+   "Discreet fire button in the handle",
+   "Runs on 2x AA batteries (not included)"
+  ],
+  "badge": "Limited"
+ },
+ "luna-wand-cart-battery-limited-edition": {
+  "name": "Luna Wand Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "A crescent moon 510 cart battery that turns your everyday sesh into a whole vibe, with a red-to-pink chrome moon, jeweled heart and butterfly wing details.",
+  "features": [
+   "Universal 510 thread",
+   "Discreet fire button in the handle",
+   "USB-C charging",
+   "A conversation piece"
+  ],
+  "badge": "Limited"
+ },
+ "smyle-labs-trucker-hat": {
+  "name": "Smyle Labs Trucker Hat",
+  "cats": [
+   "apparel"
+  ],
+  "intro": "The classic Smyle trucker hat in black with the yellow Smyle logo.",
+  "features": []
+ },
+ "robotjamin-cart-battery": {
+  "name": "Robotjamin + Remote Controller",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "Robotic charm and full remote control. Power on and off, activate hits and control features from the included 2.4GHz controller.",
+  "features": [
+   "Robotjamin cart battery",
+   "Remote controller",
+   "Free Mini Plug battery, Gold Edition",
+   "Limited edition certificate"
+  ],
+  "badge": "Limited"
+ },
+ "french-purse-cart-battery": {
+  "name": "French Purse Cart Battery",
+  "cats": [
+   "batteries",
+   "discreet",
+   "limited"
+  ],
+  "intro": "A French-inspired mini bag in bold orange leather with polished gold hardware. A statement accessory and a working cart battery in one.",
+  "features": [
+   "Orange leather mini purse",
+   "Gold hardware and clip",
+   "Adjustable voltage",
+   "Preheat"
+  ],
+  "badge": "Fall limited",
+  "look": "Bag charm"
+ },
+ "heartjamin-cart-battery": {
+  "name": "Heartjamin Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty",
+   "limited"
+  ],
+  "intro": "Love, design and performance in one piece. Two magnetic batteries come together to form one heart: share one side with your partner or keep both for yourself.",
+  "features": [
+   "2 batteries in 1",
+   "Magnetic halves form one heart",
+   "Steady 3.6V output"
+  ],
+  "badge": "Limited"
+ },
+ "purse-510-cart-battery": {
+  "name": "Pursejamin Purse Cart Battery",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "A fashion-forward cart battery shaped like a luxury mini purse. Hit in style while secretly storing an extra cartridge inside.",
+  "features": [
+   "Adjustable voltage: 3.0V / 3.3V / 3.6V",
+   "Preheat mode",
+   "USB-C charging",
+   "Hidden cart storage (up to 1g)",
+   "Universal 510 thread"
+  ],
+  "look": "Bag charm"
+ },
+ "smyle-labs-classic-logo-shirt": {
+  "name": "Smyle Labs Classic Logo Shirt",
+  "cats": [
+   "apparel"
+  ],
+  "intro": "An all-black unisex tee with the official Smyle Labs logo front and center. Soft cotton with a structured fit.",
+  "features": [
+   "100% cotton",
+   "Unisex fit",
+   "Sizes S to 5XL"
+  ]
+ },
+ "mini-plug-510-cart-battery": {
+  "name": "Mini Plug 510 Cart Battery",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "A compact, feature-packed battery for life on the go, with a built-in USB-C cable so you can charge from your phone. No cords, no hassle.",
+  "features": [
+   "Built-in USB-C charging cable",
+   "Adjustable voltage",
+   "LED display",
+   "Standard 510 thread",
+   "Pocket-sized"
+  ],
+  "badge": "New",
+  "look": "Pocket"
+ },
+ "smyle-clothing": {
+  "name": "Smyle Clothing",
+  "cats": [
+   "apparel"
+  ],
+  "intro": "Everything you need to express your style, from hats and hoodies to socks and shoes, made from premium materials.",
+  "features": [
+   "Hats and beanies",
+   "Shirts and hoodies",
+   "Pants and sweatpants",
+   "Footwear and socks"
+  ]
+ },
+ "saber-shaped-gas-torch": {
+  "name": "Saber Kitchen Torch",
+  "cats": [
+   "torches"
+  ],
+  "intro": "The Saber Torch by Fyre: a refillable kitchen torch with glowing lights and an adjustable flame. Butane not included.",
+  "features": [
+   "Saber shape with bright LED lights",
+   "Refillable butane chamber",
+   "Adjustable flame",
+   "Safety lock",
+   "Windproof"
+  ],
+  "cut": "/assets/cut/saber.webp"
+ },
+ "raygun-mini-torch-lighter-with-lights-sound": {
+  "name": "Raygun Mini Kitchen Torch",
+  "cats": [
+   "torches",
+   "novelty"
+  ],
+  "intro": "A compact refillable torch with a futuristic design, built-in lights and sound effects with every ignition.",
+  "features": [
+   "Lights + sound",
+   "Refillable",
+   "Flame adjust",
+   "Safety lock",
+   "USB-C port for lights"
+  ],
+  "cut": "/assets/cut/rayguntorch.webp"
+ },
+ "penjamin-marker-replacement-ink-tips-2-pack": {
+  "name": "Penjamin Marker Replacement Ink Tips (2-Pack)",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Two replacement permanent ink tips for your Penjamin Marker. Insert into the marker body for a fresh writing experience.",
+  "features": []
+ },
+ "raygun-penjamin-battery": {
+  "name": "Raygun Penjamin Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "The ultimate Penjamin: a futuristic cart battery with vivid LED lights and sound effects that bring every session to life.",
+  "features": [
+   "Lights + sound",
+   "0.5–1g carts fit inside",
+   "Preheat",
+   "Variable voltage",
+   "USB-C rechargeable"
+  ],
+  "cut": "/assets/cut/raygun.webp"
+ },
+ "lavender-aromatherapy-mist-cartridge-kit": {
+  "name": "Aromatherapy Cartridge, Lavender Mist",
+  "cats": [
+   "aroma"
+  ],
+  "intro": "A plant-based aromatherapy solution that smells like freshly picked lavender with hints of sweet earthiness. Made for moments of peace and balance.",
+  "features": [
+   "Plant-based formula",
+   "Lavender scent",
+   "Twists onto your Penjamin"
+  ]
+ },
+ "permanent-marker-cart-battery-by-smyle-labs": {
+  "name": "Permanent Marker Penjamin Cart Battery",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "A working permanent marker that hides and stores carts up to 4g. A discreet, portable solution that looks just like the real thing.",
+  "features": [
+   "Working permanent marker",
+   "Fits carts 0.5g up to 4.0g inside",
+   "Extra tall cap included",
+   "Preheat + variable voltage",
+   "USB-C port"
+  ],
+  "look": "Pen"
+ },
+ "gas-pump-shaped-torch-flame": {
+  "name": "Gas Pump Kitchen Torch",
+  "cats": [
+   "torches",
+   "novelty"
+  ],
+  "intro": "A kitchen torch lighter that looks like a vintage gas pump nozzle. Refillable, with an adjustable flame and a lot of retro flair.",
+  "features": [
+   "10-inch ultra long flame",
+   "Refillable",
+   "Flame adjust",
+   "Safety lock"
+  ],
+  "cut": "/assets/cut/gaspump.webp"
+ },
+ "lip-balm-penjamin-by-smyle-labs": {
+  "name": "Lip Balm Cart Pen",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "A portable 510 battery disguised as a pair of lip balms. Hide your cart in plain sight, with a second balm for cart storage.",
+  "features": [
+   "Hides your cart in plain sight",
+   "Fits most 0.5g and 1g carts",
+   "USB-C rechargeable",
+   "Portable case for a lanyard or keychain"
+  ],
+  "badge": "Bestseller",
+  "cut": "/assets/cut/lipbalm.webp",
+  "look": "Lip balm"
+ },
+ "wandjamin-battery-by-smyle-labs": {
+  "name": "Wandjamin Cart Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "A powerful aromatherapy battery disguised as a magic wand. Slide to hide your cart, and watch it glow when you press the button. Cart not included.",
+  "features": [
+   "Magic slider hides your cart",
+   "White LED glow",
+   "Voltages: 2.6V, 3.0V, 3.6V",
+   "Preheat function"
+  ]
+ },
+ "green-monster-flashlight-battery": {
+  "name": "Green Monster Twist-On Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "Fantasy meets everyday utility. A 510 twist-on battery in a nostalgic shape, with a free flashlight adapter included.",
+  "features": [
+   "Twist-on 510 battery",
+   "Free flashlight adapter",
+   "300mAh battery",
+   "Compact and lightweight"
+  ]
+ },
+ "red-ball-flashlight-battery": {
+  "name": "Red Ball Twist-On Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "A striking red ball with a contrasting button that fits comfortably in your palm. Twist on your accessories, with an added flashlight bulb.",
+  "features": [
+   "Spherical palm-sized design",
+   "Twist-on 510",
+   "Flashlight bulb included",
+   "Durable build"
+  ],
+  "badge": "New"
+ },
+ "penjamin-car-key-cartridge-magnet-replacement-2-pack": {
+  "name": "Cartridge Magnet Replacement (2-Pack)",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Two golden magnet replacement pieces for your carts. Twist onto the bottom of your cart (do not overtighten) and drop it into your Danksaber or Car Key.",
+  "features": []
+ },
+ "penjamin-car-key-tip-replacement": {
+  "name": "Car Key Tip Replacement (2-Pack)",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Replacement tips for the Penjamin Car Key, with a hole at the top for your aroma to pass through privately. Easy to clean with warm water and dish soap.",
+  "features": []
+ },
+ "herbie-flashlight-battery": {
+  "name": "Herbie Twist-On Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "A round, pink character battery that wins hearts. Twist on your accessories, with an added flashlight bulb.",
+  "features": [
+   "Charming character design",
+   "Twist-on 510",
+   "Flashlight bulb included",
+   "Compact and lightweight"
+  ]
+ },
+ "car-key-penjamin-by-smyle-labs": {
+  "name": "Car Key Penjamin",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "Low-key, high-performance aromatherapy. A stealthy battery disguised as a car key: clip it on your keychain and take your cart anywhere.",
+  "features": [
+   "Hide your cart in plain sight",
+   "Fits 0.5g and 1g carts",
+   "Adjustable voltage",
+   "Preheat function",
+   "USB-C rechargeable"
+  ],
+  "badge": "Bestseller",
+  "cut": "/assets/cut/carkey.webp",
+  "look": "Car key"
+ },
+ "smyle-labs-pen": {
+  "name": "Penjamin Cart Pen",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "intro": "A low-key writing pen and cart battery built in one. Compatible with both 1g and 0.5g carts, and it really writes.",
+  "features": [
+   "Pen that writes with ink",
+   "High-performance 510 battery",
+   "Adjustable voltage",
+   "Preheat function",
+   "Charging cable included"
+  ],
+  "badge": "Bestseller",
+  "cut": "/assets/cut/pen.webp",
+  "look": "Pen"
+ },
+ "ninja-flashlight-battery": {
+  "name": "Ninja Twist-On Battery",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "A compact battery shaped like a ninja head, with an added flashlight bulb. Discreet, stylish and universally compatible.",
+  "features": [
+   "Twist-on 510",
+   "Flashlight bulb included",
+   "Universally compatible",
+   "Long battery life"
+  ]
+ },
+ "danksaber": {
+  "name": "Danksaber Penjamin",
+  "cats": [
+   "batteries",
+   "novelty"
+  ],
+  "intro": "A space-themed cart battery that lights up the night. Compatible with 2g, 1g and 0.5g carts, and the cart goes inside.",
+  "features": [
+   "Light-up saber design",
+   "Fits 0.5g to 2g carts",
+   "Adjustable voltage",
+   "Preheat function",
+   "USB-C cable included"
+  ]
+ },
+ "perfection-aromatherapy-oil-lavender-eucalpytus": {
+  "name": "Perfection Aromatherapy Oil, Lavender & Eucalyptus",
+  "cats": [
+   "aroma"
+  ],
+  "intro": "A blissful lavender and eucalyptus aromatherapy incense oil with natural and essential oils, in a diluted, subtle formula. 10ml bottle.",
+  "features": [
+   "Lavender + eucalyptus",
+   "Natural and essential oils",
+   "10ml bottle"
+  ]
+ },
+ "penjamin-cart-pen-ink-replacement": {
+  "name": "Penjamin Cart Pen Ink Replacement (2-Pack)",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Replacement ink cartridges for the Penjamin Cart Pen. Twist and pull off the bottom, insert the new ink, and you are writing again.",
+  "features": []
+ },
+ "cart-pen-replacement-tip": {
+  "name": "Penjamin Cart Pen Replacement Tip (2-Pack)",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Silicone replacement tips for the Penjamin Cart Pen, with a hole at the top for your aroma to pass through privately. Easy to clean.",
+  "features": []
+ },
+ "downstem-soaker-by-smyle-labs": {
+  "name": "The Downstem Soaker",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Cleaning your downstem has never been easier. Pour in your cleaning solution, seal and shake for 10 to 30 seconds.",
+  "features": [
+   "Quick and efficient cleaning",
+   "Durable glass construction",
+   "Compact and portable",
+   "Fits a range of downstem sizes"
+  ]
+ },
+ "pixel-torch": {
+  "name": "Pixel Kitchen Torch",
+  "cats": [
+   "torches",
+   "novelty"
+  ],
+  "intro": "A pixel-art kitchen torch that blends nostalgic looks with serious functionality for cooking and baking.",
+  "features": [
+   "Pixel-art design",
+   "Adjustable flame",
+   "Durable construction",
+   "Reliable ignition"
+  ]
+ },
+ "inhaler-3-pack-replaceable-filters": {
+  "name": "Inhaler Filters, 3-Pack",
+  "cats": [
+   "accessories"
+  ],
+  "intro": "Replacement filters designed for a perfect slide-in fit with your Smyle Labs Inhaler. Each filter hides visible clouds, keeping your sessions discreet and smooth.",
+  "features": [
+   "Slide-in fit for the Inhaler",
+   "Hides visible clouds",
+   "3 filters per pack"
+  ],
+  "cut": "/assets/inhaler/filters-3pack.webp"
+ },
+ "inhaler-cart-battery": {
+  "name": "Inhaler 510 + Cloud Filters",
+  "cats": [
+   "batteries",
+   "discreet"
+  ],
+  "badge": "New",
+  "cut": "/assets/inhaler/teal.webp",
+  "look": "Inhaler",
+  "intro": "A discreet 510 battery that looks like an everyday inhaler. Your cart hides inside, and every exhale goes through the filter in the base.",
+  "features": [
+   "Built-in personal cloud filter in the base",
+   "Fits 0.5–1.0g 510 carts, short and long",
+   "4 voltages: 2.2V, 2.7V, 3.1V, 3.6V",
+   "USB-C charging"
+  ]
+ }
+}

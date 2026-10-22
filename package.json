@@ -1,0 +1,20 @@
+{
+  "name": "smylelabs-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smyle Labs storefront redesign (V3 minimal editorial). Next.js, deploys on Vercel.",
+  "scripts": {
+    "sync": "node scripts/sync-shopify.mjs",
+    "prebuild": "node scripts/sync-shopify.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "engines": { "node": ">=18.17" }
+}
