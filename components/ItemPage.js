@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
 import { Accordion, Heart } from '@/components/ui';
+import { DeliveryEstimate, StickyATC, TrustBadges, useStickyWatch } from '@/components/cro';
 import { CATEGORIES, byHandle, img, money, related, thumb } from '@/lib/catalog';
 import { REVIEWS, SITE } from '@/lib/site';
 
@@ -33,6 +34,12 @@ function qa(p) {
   ];
 }
 
+const COMPANION = {
+  'smyle-labs-pen': 'cart-pen-replacement-tip', 'car-key-penjamin-by-smyle-labs': 'penjamin-car-key-tip-replacement',
+  'permanent-marker-cart-battery-by-smyle-labs': 'penjamin-marker-replacement-ink-tips-2-pack', 'danksaber': 'penjamin-car-key-cartridge-magnet-replacement-2-pack',
+  'cart-pen-replacement-tip': 'smyle-labs-pen', 'penjamin-car-key-tip-replacement': 'car-key-penjamin-by-smyle-labs', 'penjamin-cart-pen-ink-replacement': 'smyle-labs-pen'
+};
+
 export default function ItemPage({ handle }) {
   const p = byHandle(handle);
   const cart = useCart();
@@ -42,6 +49,8 @@ export default function ItemPage({ handle }) {
   const [im, setIm] = useState(0);
   const [heart, setHeart] = useState(false);
   const [added, setAdded] = useState(false);
+  const [fbt, setFbt] = useState(true);
+  const [atcRef, showSticky] = useStickyWatch();
 
   const v = p.variants[vi];
   const shots = (p.cut ? [{ src: p.cut, cut: true }] : []).concat(p.images.map((s) => ({ src: s, cut: false })));
@@ -52,11 +61,19 @@ export default function ItemPage({ handle }) {
   const intro = p.intro || p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 260);
   const total = v.price * q;
   const sim = [byHandle('inhaler-cart-battery'), ...related(p, 3)].filter(Boolean);
+  const compH = COMPANION[p.handle] || (p.cats.includes('batteries') ? 'mini-plug-510-cart-battery' : p.cats.includes('torches') ? 'saber-shaped-gas-torch' : 'inhaler-cart-battery');
+  const comp = compH !== p.handle ? byHandle(compH) : null;
+  const compV = comp && (comp.variants.find((x) => x.available) || null);
 
   const add = () => {
     if (!v.available) return;
     cart.add({ variantId: v.id, handle: p.handle, name: p.name, variant: v.title, price: v.price, img: thumb(p, 300), qty: q });
     setAdded(true);
+  };
+  const addBoth = () => {
+    if (!v.available) return;
+    add();
+    if (fbt && comp && compV) cart.add({ variantId: compV.id, handle: comp.handle, name: comp.name, variant: compV.title, price: compV.price, img: thumb(comp, 300), qty: 1 });
   };
   const label = !v.available ? 'Sold out' : added ? `Added · ${money(total)}` : `Add to cart · ${money(total)}`;
 
@@ -83,7 +100,17 @@ export default function ItemPage({ handle }) {
           )}
 
           <div className="qrow"><span className="sm">Quantity</span><div className="qty"><button onClick={() => setQ(Math.max(1, q - 1))} aria-label="Fewer">−</button><span>{q}</span><button onClick={() => setQ(q + 1)} aria-label="More">+</button></div></div>
-          <div className="atc3"><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add} disabled={!v.available} style={!v.available ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}>{label}</button></div>
+          <div className="atc3" ref={atcRef}><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add} disabled={!v.available} style={!v.available ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}>{label}</button></div>
+          <DeliveryEstimate available={v.available} />
+          <TrustBadges />
+          {comp && compV && v.available && (
+            <div className="fbt">
+              <h4>Frequently bought together</h4>
+              <div className="fbt-row"><div className="im"><img src={thumb(p, 200)} alt="" /></div><span className="plus">+</span><div className="im"><img src={thumb(comp, 200)} alt="" /></div>
+                <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, cursor: 'pointer', flex: 1 }}><input type="checkbox" checked={fbt} onChange={() => setFbt(!fbt)} style={{ marginTop: 3 }} /><span>{comp.name}<br /><span className="xs g">+{money(compV.price)}</span></span></label></div>
+              <button className="bo" onClick={addBoth}>{fbt ? `Add both · ${money(total + compV.price)}` : `Add to cart · ${money(total)}`}</button>
+            </div>
+          )}
           <p className="xs g">{note}</p>
           <Accordion items={[
             ['Description', p.body || intro],
@@ -101,6 +128,16 @@ export default function ItemPage({ handle }) {
         </div>
       </section>
 
+      <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
+        <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">Store-wide reviews</span></div>
+        <div className="rv3">
+          <div className="rv3-sum"><span className="num">{SITE.rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{SITE.reviewCount.toLocaleString()} reviews across Smyle Labs</p></div>
+          {REVIEWS.store.filter((r) => !r.photo).slice(0, 3).map((r) => (
+            <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>★★★★★</span></div><span className="xs g">{r.product}</span><p>{r.text}</p></div>
+          ))}
+        </div>
+      </section>
+
       <section className="sec3" style={{ background: '#F7F7F7' }}>
         <div className="sec3-h"><div><p className="br">[you might be wondering]</p><h2 className="up d2" style={{ marginTop: 8 }}>Before you buy</h2></div><p className="sm" style={{ maxWidth: 300 }}>Straight answers to what people ask us most about this one.</p></div>
         <div className="talk3">{qa(p).map(([qq, a]) => <div key={qq}><b>{qq}</b><p>{a}</p></div>)}</div>
@@ -113,16 +150,8 @@ export default function ItemPage({ handle }) {
         </div>
       </section>
 
-      <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
-        <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">Store-wide reviews</span></div>
-        <div className="rv3">
-          <div className="rv3-sum"><span className="num">{SITE.rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{SITE.reviewCount.toLocaleString()} reviews across Smyle Labs</p></div>
-          {REVIEWS.store.filter((r) => !r.photo).slice(0, 3).map((r) => (
-            <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>★★★★★</span></div><span className="xs g">{r.product}</span><p>{r.text}</p></div>
-          ))}
-        </div>
-      </section>
 
+      <StickyATC show={showSticky} img={thumb(p, 120)} name={p.name + (v.title ? ' · ' + v.title : '')} price={money(v.price)} label={label} onAdd={add} disabled={!v.available} />
       <div className="mstick"><button className={'hb' + (heart ? ' on' : '')} style={{ width: 46, height: 46, border: 0, background: '#F7F7F7' }} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk" style={{ flex: 1 }} onClick={add} disabled={!v.available}>{label}</button></div>
     </>
   );

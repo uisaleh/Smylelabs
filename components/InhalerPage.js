@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
 import { Accordion, Heart, stars } from '@/components/ui';
+import { DeliveryEstimate, StickyATC, TrustBadges, useStickyWatch } from '@/components/cro';
 import { FILTERS, byHandle, img, money, thumb } from '@/lib/catalog';
 import { INHALER_COLORS, INHALER_TIERS, REVIEWS, SITE } from '@/lib/site';
 
@@ -25,6 +26,7 @@ export default function InhalerPage({ handle }) {
   const [heart, setHeart] = useState(false);
   const [all, setAll] = useState(false);
   const [added, setAdded] = useState(false);
+  const [atcRef, showSticky] = useStickyWatch();
 
   const c0 = INHALER_COLORS[colors[0]];
   const shots = [
@@ -69,6 +71,7 @@ export default function InhalerPage({ handle }) {
             <div className="tiers3" role="radiogroup" aria-label="Quantity">
               {INHALER_TIERS.map((x) => (
                 <button key={x.qty} className={'t3' + (x.qty === tier ? ' on' : '')} role="radio" aria-checked={x.qty === tier} onClick={() => { setTier(x.qty); setAdded(false); }}>
+                  {x.qty === 2 && <span className="pop">Most popular</span>}{x.qty === 3 && <span className="pop" style={{ background: '#FFD800', color: '#131313' }}>Best value</span>}
                   <span className="rd" /><span><b>{x.name}</b>{x.save && <span className="sv">{x.save}</span>}<br /><span className="xs g">{money(x.each)} each{x.qty > 1 ? ' · mix colors' : ''}</span></span>
                   <span className="pr">{money(x.total)}{x.was > 0 && <s>{money(x.was)}</s>}</span>
                 </button>
@@ -94,7 +97,9 @@ export default function InhalerPage({ handle }) {
             </button>
           )}
 
-          <div className="atc3"><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add}>{label}</button></div>
+          <div className="atc3" ref={atcRef}><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add}>{label}</button></div>
+          <DeliveryEstimate available />
+          <TrustBadges />
           <p className="xs g">Cart (oil) not included · Free shipping from California</p>
           <Accordion first={0} html items={[
             ['Full description', p.body],
@@ -114,6 +119,14 @@ export default function InhalerPage({ handle }) {
               <img key={cur.src} className="m" src={cur.src} alt={cur.alt} />
             </>) : cur.shop ? <img key={cur.src} className="sq" src={cur.src} alt={cur.alt} /> : <img key={cur.src} className="f" src={cur.src} alt={cur.alt} />}
           </div>
+        </div>
+      </section>
+
+      <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
+        <div className="sec3-h"><p className="br">[customers say]</p><button className="sm ul" style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit', padding: '10px 0', color: '#131313' }} onClick={() => setAll(!all)} aria-expanded={all}>{all ? 'Show less' : 'View all reviews'}</button></div>
+        <div className="rv3">
+          <div className="rv3-sum"><span className="num">4.7</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>Based on 513 reviews from verified buyers</p></div>
+          {revs.map((r) => <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>{stars(r.stars)}</span></div><span className="xs g">Verified buyer</span><p>{r.text}</p></div>)}
         </div>
       </section>
 
@@ -148,13 +161,6 @@ export default function InhalerPage({ handle }) {
         </div>
       </section>
 
-      <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
-        <div className="sec3-h"><p className="br">[customers say]</p><button className="sm ul" style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit', padding: '10px 0', color: '#131313' }} onClick={() => setAll(!all)} aria-expanded={all}>{all ? 'Show less' : 'View all reviews'}</button></div>
-        <div className="rv3">
-          <div className="rv3-sum"><span className="num">4.7</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>Based on 513 reviews from verified buyers</p></div>
-          {revs.map((r) => <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>{stars(r.stars)}</span></div><span className="xs g">Verified buyer</span><p>{r.text}</p></div>)}
-        </div>
-      </section>
 
       <section className="sec3" style={{ background: '#F7F7F7' }}>
         <div className="sec3-h"><div><p className="br">[questions]</p><h2 className="up d2" style={{ marginTop: 8 }}>Good to know</h2></div></div>
@@ -170,6 +176,7 @@ export default function InhalerPage({ handle }) {
         </div>
       </section>
 
+      <StickyATC show={showSticky} img={c0.img} name={`Inhaler 510 · ${t.name}`} price={money(total)} label={label} onAdd={add} />
       <div className="mstick"><button className={'hb' + (heart ? ' on' : '')} style={{ width: 46, height: 46, border: 0, background: '#F7F7F7' }} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk" style={{ flex: 1 }} onClick={add}>{label}</button></div>
     </>
   );

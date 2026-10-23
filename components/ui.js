@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { money, thumb } from '@/lib/catalog';
+import { useCart } from '@/components/CartProvider';
 
 export const Chev = ({ open }) => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={open ? { transform: 'rotate(180deg)' } : undefined} aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
@@ -26,18 +27,34 @@ export function Accordion({ items, first = 0, plain = false, html = false }) {
   );
 }
 
-/** Catalog tile with yellow hover, wishlist heart and badge. */
+/** Catalog tile with yellow hover, quick add, wishlist heart and badge. */
 export function Tile({ p, saved, onSave, delay = 0 }) {
+  const cart = useCart();
+  const [done, setDone] = useState(false);
   const cut = !!p.cut;
+  const avail = p.variants.filter((v) => v.available);
+  const many = p.variants.length > 1;
+  const quick = (e) => {
+    e.preventDefault();
+    if (!avail.length) return;
+    const v = avail[0];
+    cart.add({ variantId: v.id, handle: p.handle, name: p.name, variant: v.title, price: v.price, img: thumb(p, 300), qty: 1 });
+    setDone(true); setTimeout(() => setDone(false), 1800);
+  };
   return (
     <div className="tl" style={{ animationDelay: delay + 'ms' }}>
-      <Link className="tl-img" href={p.href} aria-label={p.name}>
-        {p.badge && <span className={'tl-badge' + (/new|best/i.test(p.badge) ? ' y' : '')}>{p.badge}</span>}
-        {!p.available && <span className="tl-badge" style={{ top: 'auto', bottom: 10 }}>Sold out</span>}
-        <img className={cut ? 'c' : 's'} src={thumb(p, 600)} alt={p.name} loading="lazy" />
-      </Link>
+      <div className="tl-mw">
+        <Link className="tl-img" href={p.href} aria-label={p.name}>
+          {p.badge && <span className={'tl-badge' + (/new|best/i.test(p.badge) ? ' y' : '')}>{p.badge}</span>}
+          {!p.available && <span className="tl-badge" style={{ top: 'auto', bottom: 10 }}>Sold out</span>}
+          <img className={cut ? 'c' : 's'} src={thumb(p, 600)} alt={p.name} loading="lazy" />
+        </Link>
+        {p.available && (many
+          ? <Link className="qa" href={p.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>Choose {p.option ? p.option.toLowerCase() : 'option'} · {p.variants.length}</Link>
+          : <button className={'qa' + (done ? ' done' : '')} onClick={quick}>{done ? 'Added ✓' : `Quick add · ${money(p.price)}`}</button>)}
+      </div>
       {onSave && <button className={'heart' + (saved ? ' on' : '')} aria-label={'Save ' + p.name} aria-pressed={!!saved} onClick={onSave}><Heart /></button>}
-      <Link href={p.href} style={{ textDecoration: 'none' }}><span className="tl-name">{p.name}</span><br /><span className="tl-price">{money(p.price)}</span></Link>
+      <Link href={p.href} style={{ textDecoration: 'none' }}><span className="tl-name">{p.name}</span><br /><span className="tl-price">{money(p.price)}</span>{p.variants.length > 1 && <span className="tl-rate"> · {p.variants.length} {p.option ? p.option.toLowerCase() + 's' : 'options'}</span>}</Link>
     </div>
   );
 }

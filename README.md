@@ -16,6 +16,22 @@ Production code for the new smylelabs.com design. Built with **Next.js 14 (App R
 
 Product URLs keep the Shopify handles (`/products/<handle>`), so existing links and SEO carry over.
 
+## Conversion features (e-commerce best practices)
+
+| Where | What | Why it sells |
+| --- | --- | --- |
+| Every page | Rotating offer bar: bundle savings, free shipping, 4.7★ rating, text/WhatsApp support | Offer and trust visible before the first scroll |
+| Home | Hero with one clear promise, star rating + review count, primary CTA to the hero product, secondary "Shop all" | Clear value proposition and one obvious next step |
+| Home | "As seen on" social proof, perks strip, Bestsellers grid with **Quick add**, bundle block, reviews high on the page | Social proof and fewer clicks to cart |
+| Home | Money-back guarantee block (risk reversal) and FAQ that handles objections | Removes purchase anxiety |
+| Product pages | Quantity tiers with **Most popular / Best value** tags, live **delivery date estimate**, trust badges under Add to cart, **Frequently bought together** with one-click "Add both" | Anchoring, urgency without fake timers, higher order value |
+| Product pages | Reviews moved up, sticky Add to cart on desktop and mobile | Proof at the decision point; the button is always reachable |
+| Shop | Quick add on every tile, "Choose color" shortcut, Best-selling sort, in-grid bundle promo tile, trust strip | Shorter path to cart, bundle visibility |
+| Cart drawer + cart | **Bundle progress bar** ("Add 1 more Inhaler to save 16%"), one-click **upsells**, direct secure checkout, trust badges, promo code | Higher order value and fewer drop-offs |
+| Email capture | Early-access popup (after 20 s or exit intent, once per visitor) | Grows the list for drop announcements |
+
+All claims use the store's real offers (bundle pricing, free shipping, 2–5 day delivery, warranty, money-back guarantee, 12,660 reviews). There are no fake countdowns or fake stock counters.
+
 ## How the systems work
 
 - **Catalog sync**: `scripts/sync-shopify.mjs` runs before every build (`prebuild`). It reads `https://smylelabs.com/products.json`, cleans the descriptions and writes `data/products.json`. Every Vercel deploy therefore picks up new products, prices, stock and photos. If the store can't be reached, the committed snapshot is used. Run it locally with `npm run sync`.

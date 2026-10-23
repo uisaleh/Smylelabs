@@ -1,12 +1,13 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Tile } from '@/components/ui';
 import { CATEGORIES, COLLECTION_ALIASES, PRODUCTS, inCat } from '@/lib/catalog';
 
 const LOOKS = ['Inhaler', 'Car key', 'Pen', 'Lip balm', 'Tumbler', 'Bag charm', 'Controller', 'Pocket'];
 const PRICES = [['any', 'Any price', () => true], ['u20', 'Under $20', (v) => v < 20], ['m', '$20 – $35', (v) => v >= 20 && v <= 35], ['o35', 'Over $35', (v) => v > 35]];
-const SORTS = [['featured', 'Featured'], ['low', 'Price, low to high'], ['high', 'Price, high to low'], ['az', 'A–Z']];
+const SORTS = [['featured', 'Best selling'], ['low', 'Price, low to high'], ['high', 'Price, high to low'], ['az', 'A–Z']];
 
 export default function ShopPage() {
   const sp = useSearchParams();
@@ -44,6 +45,7 @@ export default function ShopPage() {
         <h1 className="up d1">{cat === 'all' ? 'All products' : title}<small>{list.length} products</small></h1>
         <label className="fld" style={{ minWidth: 220, minHeight: 44 }}><span className="xs g">Search</span><input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Car key, torch, pen…" aria-label="Search products" /></label>
       </div>
+      <div className="seen" style={{ justifyContent: 'flex-start', padding: '10px 32px', borderTop: '1px solid #E7E7E7' }}><span>★★★★★ <b style={{ textTransform: 'none', letterSpacing: 0, fontSize: 12 }}>4.7 from 12,660 reviews</b></span><span>✓ Free shipping, 2–5 days</span><span>✓ Money-back guarantee</span><span>✓ Secure checkout</span></div>
       <div className="ct-bar">
         <div className="chips3" role="tablist" aria-label="Category">
           {CATEGORIES.map((c) => <button key={c.id} className={cat === c.id ? 'on' : ''} role="tab" aria-selected={cat === c.id} onClick={() => pickCat(c.id)}>[{c.name}]</button>)}
@@ -52,7 +54,14 @@ export default function ShopPage() {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg></button>
       </div>
       <div className="ct-grid">
-        {list.map((p, i) => <Tile key={p.handle} p={p} delay={Math.min(i, 12) * 40} saved={saved[p.handle]} onSave={() => toggleSave(p.handle)} />)}
+        {list.map((p, i) => (
+          <Fragment key={p.handle}>
+            <Tile p={p} delay={Math.min(i, 12) * 40} saved={saved[p.handle]} onSave={() => toggleSave(p.handle)} />
+            {i === 2 && !q && (cat === 'all' || cat === 'discreet' || cat === 'batteries') && (
+              <Link className="promo-tile" href="/products/inhaler-cart-battery"><span className="br" style={{ color: '#131313' }}>[bundle &amp; save]</span><img src="/assets/inhaler/blush.webp" alt="" /><div><h3>Buy 3 Inhalers,<br />save 16%</h3><p className="sm" style={{ marginTop: 8 }}>Mix any of the 5 colors · Free shipping</p><span className="bk" style={{ marginTop: 14 }}>Build your bundle</span></div></Link>
+            )}
+          </Fragment>
+        ))}
         {list.length === 0 && <p className="sm g" style={{ gridColumn: '1/-1', padding: '40px 0' }}>No products match these filters. <button className="ul" style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit' }} onClick={reset}>Clear filters</button></p>}
       </div>
       {fOpen && (

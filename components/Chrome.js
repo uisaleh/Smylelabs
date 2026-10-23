@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useCart } from '@/components/CartProvider';
 import { MENU, SITE } from '@/lib/site';
 import { CATEGORIES, money } from '@/lib/catalog';
+import { AnnouncementBar, BundleProgress, Upsells, EmailPopup } from '@/components/cro';
 
 const Burger = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M3 8h18M3 12h18M9 16h12" /></svg>
@@ -21,6 +22,7 @@ export function Header() {
   const active = (href) => (href === '/' ? path === '/' : path.startsWith(href) || (href === '/shop' && path.startsWith('/products')));
   return (
     <>
+      <AnnouncementBar />
       <header className="hd3">
         <Link className="logo3" href="/" aria-label="Smyle Labs home"><img src="/assets/brand/logo-black.webp" alt="Smyle Labs" /></Link>
         <nav className="nav3" aria-label="Main">
@@ -48,6 +50,7 @@ export function Header() {
         </div>
       )}
       <CartDrawer />
+      <EmailPopup />
     </>
   );
 }
@@ -60,23 +63,31 @@ function CartDrawer() {
       <div className="scrim3" onClick={() => cart.setOpen(false)} />
       <aside className="drawer3" aria-label="Cart">
         <div className="dh">Your cart ({cart.count})<button aria-label="Close cart" onClick={() => cart.setOpen(false)} style={{ background: 'none', border: 0, cursor: 'pointer', width: 40, height: 40, fontSize: 20 }}>×</button></div>
-        <div style={{ flex: 1, overflow: 'auto', padding: '8px 24px' }}>
-          {cart.items.length === 0 && <p className="sm g" style={{ padding: '24px 0' }}>Your cart is empty.</p>}
-          {cart.items.map((it) => (
-            <div key={it.variantId} className="li3" style={{ borderBottom: '1px solid #E7E7E7', gridTemplateColumns: '72px 1fr auto' }}>
-              <div className="im" style={{ width: 72, height: 84 }}><img src={it.img} alt="" /></div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}><span style={{ fontSize: 14 }}>{it.name}</span>{it.variant && <span className="xs g">{it.variant}</span>}
-                <div className="qty"><button onClick={() => cart.setQty(it.variantId, it.qty - 1)} aria-label="Fewer">−</button><span>{it.qty}</span><button onClick={() => cart.setQty(it.variantId, it.qty + 1)} aria-label="More">+</button></div></div>
-              <div className="rt"><button onClick={() => cart.remove(it.variantId)} style={{ border: 0, background: 'none', cursor: 'pointer', fontSize: 11, color: '#797979', textDecoration: 'underline' }}>Remove</button><b style={{ fontSize: 15, fontWeight: 400 }}>{money(it.price * it.qty)}</b></div>
-            </div>
-          ))}
+        <BundleProgress />
+        <div style={{ flex: 1, overflow: 'auto' }}>
+          <div style={{ padding: '8px 24px' }}>
+            {cart.items.length === 0 && <div style={{ padding: '24px 0', display: 'grid', gap: 12 }}><p className="sm g">Your cart is empty.</p><Link className="bk" href="/shop" onClick={() => cart.setOpen(false)}>Shop bestsellers</Link></div>}
+            {cart.items.map((it) => (
+              <div key={it.variantId} className="li3" style={{ borderBottom: '1px solid #E7E7E7', gridTemplateColumns: '72px 1fr auto' }}>
+                <div className="im" style={{ width: 72, height: 84 }}><img src={it.img} alt="" /></div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}><span style={{ fontSize: 14 }}>{it.name}</span>{it.variant && <span className="xs g">{it.variant}</span>}
+                  <div className="qty"><button onClick={() => cart.setQty(it.variantId, it.qty - 1)} aria-label="Fewer">−</button><span>{it.qty}</span><button onClick={() => cart.setQty(it.variantId, it.qty + 1)} aria-label="More">+</button></div></div>
+                <div className="rt"><button onClick={() => cart.remove(it.variantId)} style={{ border: 0, background: 'none', cursor: 'pointer', fontSize: 11, color: '#797979', textDecoration: 'underline' }}>Remove</button><b style={{ fontSize: 15, fontWeight: 400 }}>{money(it.price * it.qty)}</b></div>
+              </div>
+            ))}
+          </div>
+          <Upsells />
         </div>
-        <div style={{ padding: '16px 24px', borderTop: '1px solid #E7E7E7', display: 'grid', gap: 6 }}>
-          {cart.savings > 0 && <div className="tot3"><span>Bundle savings</span><span>−{money(cart.savings)}</span></div>}
-          <div className="tot3 big" style={{ marginTop: 0, borderTop: 0, paddingTop: 0 }}><span>Total</span><span>{money(cart.total)}</span></div>
-          <Link className="bk full" href="/cart" onClick={() => cart.setOpen(false)}>View cart &amp; checkout</Link>
-          <span className="xs g">{SITE.shipping}</span>
-        </div>
+        {cart.items.length > 0 && (
+          <div style={{ padding: '16px 24px', borderTop: '1px solid #E7E7E7', display: 'grid', gap: 6 }}>
+            {cart.savings > 0 && <div className="tot3"><span>Bundle savings</span><span>−{money(cart.savings)}</span></div>}
+            <div className="tot3"><span>Shipping</span><span>Free</span></div>
+            <div className="tot3 big" style={{ marginTop: 0, paddingTop: 8 }}><span>Total</span><span>{money(cart.total)}</span></div>
+            <a className="bk full" href={cart.checkoutUrl} style={{ height: 52 }}>Checkout securely · {money(cart.total)}</a>
+            <Link className="sm ul" href="/cart" onClick={() => cart.setOpen(false)} style={{ textAlign: 'center', padding: '6px 0' }}>View cart / add promo code</Link>
+            <span className="xs g" style={{ textAlign: 'center' }}>21+ only · Free shipping from California · Secure checkout</span>
+          </div>
+        )}
       </aside>
     </>
   );
