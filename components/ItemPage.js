@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
-import { Accordion, Heart } from '@/components/ui';
+import { Accordion, Heart, Tile } from '@/components/ui';
 import { DeliveryEstimate, StickyATC, TrustBadges, useStickyWatch } from '@/components/cro';
 import { CATEGORIES, byHandle, img, money, related, thumb } from '@/lib/catalog';
 import { REVIEWS, SITE } from '@/lib/site';
@@ -83,7 +83,7 @@ export default function ItemPage({ handle }) {
         <div className="pd-l">
           <p className="br"><Link href="/shop" style={{ textDecoration: 'none' }}>[Catalog]</Link> <Link href={`/shop?cat=${cat.id}`} style={{ textDecoration: 'none' }}>[{cat.name}]</Link> <b>[{p.name}]</b></p>
           <div>{p.badge && <span className="tl-badge y" style={{ position: 'static', display: 'inline-block', marginBottom: 10 }}>{p.badge}</span>}<h1 className="up d1">{p.name}</h1></div>
-          <div className="price3"><b>{money(v.price)}</b>{v.compare > v.price && <s className="g">{money(v.compare)}</s>}<span className="xs g">Free shipping from California</span></div>
+          <div className="price3"><b>{money(v.price)}</b>{v.compare > v.price && <><s className="g">{money(v.compare)}</s><span className="tl-badge y" style={{ position: 'static' }}>Save {money(v.compare - v.price)}</span></>}<span className="xs g">Free shipping from California</span></div>
           <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>{SITE.rating}</b> · {SITE.reviewCount.toLocaleString()} store reviews</a>
           <p style={{ fontSize: 14, lineHeight: 1.55, color: '#3A3A3A' }}>{intro}</p>
           {p.features.length > 0 && <ul className="dots3">{p.features.map((f) => <li key={f}>{f}</li>)}</ul>}
@@ -132,9 +132,12 @@ export default function ItemPage({ handle }) {
         <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">Store-wide reviews</span></div>
         <div className="rv3">
           <div className="rv3-sum"><span className="num">{SITE.rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{SITE.reviewCount.toLocaleString()} reviews across Smyle Labs</p></div>
-          {REVIEWS.store.filter((r) => !r.photo).slice(0, 3).map((r) => (
+          {REVIEWS.store.filter((r) => !r.photo).slice(0, 2).map((r) => (
             <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>★★★★★</span></div><span className="xs g">{r.product}</span><p>{r.text}</p></div>
           ))}
+        </div>
+        <div className="ugc4">
+          {[['inhaler', 'Inhaler'], ['lipbalm', 'Lip Balm'], ['moonwand', 'Moon Wand']].map(([f, n]) => <figure key={f}><img src={`/assets/ugc/${f}.webp`} alt={`Customer photo: ${n}`} loading="lazy" /><figcaption>★★★★★ Verified buyer · {n}</figcaption></figure>)}
         </div>
       </section>
 
@@ -144,9 +147,16 @@ export default function ItemPage({ handle }) {
       </section>
 
       <section className="sec3">
+        {p.cats.includes('batteries') && (
+          <Link href="/products/inhaler-cart-battery" className="xsell">
+            <img src="/assets/inhaler/blush.webp" alt="" />
+            <div><p className="br" style={{ color: '#131313' }}>[our #1 discreet battery]</p><h3 className="up d3" style={{ marginTop: 6 }}>Hide your clouds too</h3><p className="sm" style={{ marginTop: 6 }}>The Inhaler has a built-in cloud filter. Buy 2 save 11%, buy 3 save 16%.</p></div>
+            <span className="bk">Shop the Inhaler · $36.99</span>
+          </Link>
+        )}
         <div className="sec3-h"><h2 className="up d2">Pairs well with</h2><Link className="sm ul" href="/shop">All products</Link></div>
         <div className="sim">
-          {sim.map((s) => <Link key={s.handle} className="tl" href={s.href}><div className="tl-img"><img className={s.cut ? 'c' : 's'} src={thumb(s, 500)} alt={s.name} loading="lazy" /></div><span className="tl-name">{s.name}</span><span className="tl-price">{money(s.price)}</span></Link>)}
+          {sim.map((s) => <Tile key={s.handle} p={s} />)}
         </div>
       </section>
 

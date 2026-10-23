@@ -568,3 +568,19 @@
 /* v4.1 gallery fix: Shopify gallery images fill the stage */
 .pd-stage img.sq{position:absolute;inset:4%;width:92%;height:92%;max-width:none;aspect-ratio:auto;object-fit:contain;background:transparent;box-shadow:none}
 .pd-stage img.f{position:absolute;inset:0}
+/* v4.2 */
+.p3 .guar a.bk,.p3 .guar a.bk:visited,.p3 .guar a.bk:hover{color:var(--k);background:var(--y);box-shadow:none}
+.p3 .guar a.bk:hover{background:#fff}
+.p3 .lb3 .side a.bk,.p3 .lb3 .side a.bk:visited{color:var(--k)}
+.pd{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px}
+.pd-stage{height:560px}
+.pd-l h1.d1{font-size:clamp(30px,3vw,46px);line-height:1}
+.xsell{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:center;background:var(--y);padding:18px 24px;margin-bottom:48px;text-decoration:none;color:var(--k);transition:transform .3s}
+.xsell:hover{transform:translateY(-2px)}
+.xsell img{height:120px;width:auto;object-fit:contain;filter:drop-shadow(0 16px 16px rgba(0,0,0,.18))}
+.ugc4{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:24px}
+.ugc4 figure{margin:0;position:relative}
+.ugc4 img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.ugc4 figcaption{position:absolute;left:8px;bottom:8px;background:#fff;font-size:11px;padding:5px 8px}
+@media (max-width:1080px){.pd{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}.pd-stage{height:460px}}
+@media (max-width:760px){.pd{grid-template-columns:1fr;gap:18px}.pd-stage{height:380px}.pd-l h1.d1{font-size:30px}.xsell{grid-template-columns:80px 1fr;padding:14px}.xsell img{height:80px}.xsell .bk{grid-column:1/-1}.ugc4{grid-template-columns:repeat(3,minmax(0,1fr))}.ugc4 figcaption{display:none}}
