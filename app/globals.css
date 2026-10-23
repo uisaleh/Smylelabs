@@ -565,3 +565,6 @@
 .tl-mw{position:relative}
 .p3 a.qa{color:#fff}
 @media (max-width:760px){.hero4-r .chip:nth-of-type(3){display:none}.hero4-r .chip{left:14px!important;bottom:14px!important;max-width:240px;padding:10px 12px}.hero4-cta{flex-direction:column}.hero4-cta .bk,.hero4-cta .bo{width:100%}}
+/* v4.1 gallery fix: Shopify gallery images fill the stage */
+.pd-stage img.sq{position:absolute;inset:4%;width:92%;height:92%;max-width:none;aspect-ratio:auto;object-fit:contain;background:transparent;box-shadow:none}
+.pd-stage img.f{position:absolute;inset:0}

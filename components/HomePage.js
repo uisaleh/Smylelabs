@@ -37,23 +37,27 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero4">
-        <div className="hero4-l">
-          <p className="br">[discreet 510 cart batteries]</p>
-          <h1 className="up">Batteries that don’t look like batteries</h1>
-          <p className="lead">An inhaler, a car key, a pen, a lip balm. Hide your cart in plain sight, and on the Inhaler, hide your clouds too with the built-in filter.</p>
-          <div className="proof"><span className="stars">★★★★★</span><b>4.7</b><span className="g">from 12,660 verified reviews</span></div>
-          <div className="hero4-cta">
-            <Link className="bk" href={P('inhaler-cart-battery')}>Shop the Inhaler · {inh ? money(inh.price) : '$36.99'}</Link>
-            <Link className="bo" href="/shop">Shop all {PRODUCTS.length}</Link>
-          </div>
-          <div className="proof g" style={{ gap: 16 }}><span>✓ Free shipping, 2–5 days</span><span>✓ Money-back guarantee</span><span>✓ Real support</span></div>
+
+      <section className="na" aria-label="New arrivals">
+        <span className="lbl">New arrivals</span>
+        <div className="na-row">
+          {ARRIVALS.map(([n, src, h], i) => (
+            <Link key={n} href={P(h)} style={{ animationDelay: i * 60 + 'ms' }} aria-label={n}><img src={src} alt={n} /></Link>
+          ))}
         </div>
-        <Link className="hero4-r" href={P('inhaler-cart-battery')} aria-label="Shop the Inhaler 510">
-          <span className="offer"><span>Buy 3</span><b>−16%</b><span>Mix colors</span></span>
-          <img className="main" src="/assets/inhaler/teal.webp" alt="Inhaler 510 cart battery in Blue" />
-          <span className="chip" style={{ left: 24, bottom: 28 }}><b>“It blends in well with my actual inhaler.”</b>★★★★★ Amanda T., verified buyer</span>
-          <span className="chip" style={{ right: 24, bottom: 120 }}><b>Built-in cloud filter</b>Exhale into the base</span>
+      </section>
+
+      <section className="duo3">
+        <Link className="pan" href={P('inhaler-cart-battery')} style={{ background: '#C9B9A2' }} aria-label="Inhaler 510 special offer">
+          <img className="bgp" src="/assets/photo/inhale.webp" alt="Man holding the Inhaler battery near his face" />
+          <span className="cap" style={{ left: 20, top: 18, color: '#fff' }}>Special offer</span>
+          <span className="txt" style={{ left: '52%', top: 18, color: '#fff' }}>Buy 2 Inhalers, save 11%. Buy 3, save 16%. Mix any of the 5 colors.</span>
+        </Link>
+        <Link className="pan hy" href={P('car-key-penjamin-by-smyle-labs')} style={{ background: '#FFD800' }} aria-label="Car Key Penjamin">
+          <span className="slab" aria-hidden="true" />
+          <img className="hero" src="/assets/cut/carkey.webp" alt="Car Key Penjamin battery" />
+          <span className="cap" style={{ left: 20, bottom: 18 }}>Timeless hits</span>
+          <span className="txt" style={{ right: 20, bottom: 18, textAlign: 'right' }}>The Penjamin line customers come back to: the car key, the pen, the lip balm.</span>
         </Link>
       </section>
 
@@ -66,14 +70,6 @@ export default function HomePage() {
         <div><b>Real people</b><span>Call, text or WhatsApp {SITE.phone}</span></div>
       </section>
 
-      <section className="na" aria-label="New arrivals">
-        <span className="lbl">Shop by disguise</span>
-        <div className="na-row">
-          {ARRIVALS.map(([n, src, h], i) => (
-            <Link key={n} href={P(h)} style={{ animationDelay: i * 60 + 'ms' }} aria-label={n}><img src={src} alt={n} /></Link>
-          ))}
-        </div>
-      </section>
 
       <section className="sec3">
         <div className="sec3-h"><div><p className="br">[most loved]</p><h2 className="up d2" style={{ marginTop: 8 }}>Bestsellers</h2></div><Link className="sm ul" href="/shop">Shop all {PRODUCTS.length} products</Link></div>
@@ -114,19 +110,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="duo3">
-        <Link className="pan" href={P('inhaler-cart-battery')} style={{ background: '#C9B9A2' }} aria-label="Inhaler 510 special offer">
-          <img className="bgp" src="/assets/photo/inhale.webp" alt="Man holding the Inhaler battery near his face" />
-          <span className="cap" style={{ left: 20, top: 18, color: '#fff' }}>Special offer</span>
-          <span className="txt" style={{ left: '52%', top: 18, color: '#fff' }}>Buy 2 Inhalers, save 11%. Buy 3, save 16%. Mix any of the 5 colors.</span>
-        </Link>
-        <Link className="pan hy" href={P('car-key-penjamin-by-smyle-labs')} style={{ background: '#FFD800' }} aria-label="Car Key Penjamin">
-          <span className="slab" aria-hidden="true" />
-          <img className="hero" src="/assets/cut/carkey.webp" alt="Car Key Penjamin battery" />
-          <span className="cap" style={{ left: 20, bottom: 18 }}>Timeless hits</span>
-          <span className="txt" style={{ right: 20, bottom: 18, textAlign: 'right' }}>The Penjamin line customers come back to: the car key, the pen, the lip balm.</span>
-        </Link>
-      </section>
 
       <section className="sec3" style={{ borderTop: '1px solid #E7E7E7' }}>
         <div className="sec3-h"><div><p className="br">[how it works]</p><h2 className="up d2" style={{ marginTop: 8 }}>Hide it in plain sight</h2></div><p className="sm" style={{ maxWidth: 320 }}>Every Smyle Labs battery works the same easy way. No tools, no setup.</p></div>
