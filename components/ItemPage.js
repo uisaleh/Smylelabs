@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
 import { Accordion, Heart, Tile } from '@/components/ui';
 import { DeliveryEstimate, StickyATC, TrustBadges, useStickyWatch } from '@/components/cro';
-import { CATEGORIES, byHandle, img, money, related, thumb } from '@/lib/catalog';
+import { CATEGORIES, byHandle, img, money, related, thumb, tierTotal } from '@/lib/catalog';
 import { REVIEWS, SITE } from '@/lib/site';
 
 function qa(p) {
@@ -59,7 +59,9 @@ export default function ItemPage({ handle }) {
   const bat = p.cats.includes('batteries'), tor = p.cats.includes('torches');
   const note = bat ? 'Cart (oil) not included · 21+ only · Ships in 2–5 business days' : tor ? 'Butane not included · 21+ only · Ships in 2–5 business days' : 'Ships from California in 2–5 business days';
   const intro = p.intro || p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 260);
-  const total = v.price * q;
+  const total = tierTotal(p, q, v.price);
+  const rating = p.reviews ? p.rating : SITE.rating;
+  const rcount = p.reviews || SITE.reviewCount;
   const sim = [byHandle('inhaler-cart-battery'), ...related(p, 3)].filter(Boolean);
   const compH = COMPANION[p.handle] || (p.cats.includes('batteries') ? 'mini-plug-510-cart-battery' : p.cats.includes('torches') ? 'saber-shaped-gas-torch' : 'inhaler-cart-battery');
   const comp = compH !== p.handle ? byHandle(compH) : null;
@@ -84,7 +86,7 @@ export default function ItemPage({ handle }) {
           <p className="br"><Link href="/shop" style={{ textDecoration: 'none' }}>[Catalog]</Link> <Link href={`/shop?cat=${cat.id}`} style={{ textDecoration: 'none' }}>[{cat.name}]</Link> <b>[{p.name}]</b></p>
           <div>{p.badge && <span className="tl-badge y" style={{ position: 'static', display: 'inline-block', marginBottom: 10 }}>{p.badge}</span>}<h1 className="up d1">{p.name}</h1></div>
           <div className="price3"><b>{money(v.price)}</b>{v.compare > v.price && <><s className="g">{money(v.compare)}</s><span className="tl-badge y" style={{ position: 'static' }}>Save {money(v.compare - v.price)}</span></>}<span className="xs g">Free shipping from California</span></div>
-          <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>{SITE.rating}</b> · {SITE.reviewCount.toLocaleString()} store reviews</a>
+          <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>{rating}</b> · {rcount.toLocaleString()} {p.reviews ? 'reviews' : 'store reviews'}</a>
           <p style={{ fontSize: 14, lineHeight: 1.55, color: '#3A3A3A' }}>{intro}</p>
           {p.features.length > 0 && <ul className="dots3">{p.features.map((f) => <li key={f}>{f}</li>)}</ul>}
 
@@ -99,10 +101,27 @@ export default function ItemPage({ handle }) {
             </div>
           )}
 
+          {p.tiers && v.available && (
+            <div>
+              <div className="sz" style={{ marginBottom: 8 }}><span className="sm">Bundle &amp; save</span><span className="xs g">Mix and match {p.option ? p.option.toLowerCase() + 's' : ''}</span></div>
+              <div className="tiers3" role="radiogroup" aria-label="Quantity">
+                {[1, 2, 3].map((n) => {
+                  const pct = n === 1 ? 0 : p.tiers[n - 2]; const tot = tierTotal(p, n, v.price);
+                  return (
+                    <button key={n} className={'t3' + (q === n ? ' on' : '')} role="radio" aria-checked={q === n} onClick={() => { setQ(n); setAdded(false); }}>
+                      {n === 2 && <span className="pop">Most popular</span>}{n === 3 && <span className="pop" style={{ background: '#FFD800', color: '#131313' }}>Best value</span>}
+                      <span className="rd" /><span><b>{n} × {p.name.split(' ').slice(0, 3).join(' ')}</b>{pct > 0 && <span className="sv">Save {pct}%</span>}<br /><span className="xs g">{money(tot / n)} each</span></span>
+                      <span className="pr">{money(tot)}{pct > 0 && <s>{money(v.price * n)}</s>}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
           <div className="qrow"><span className="sm">Quantity</span><div className="qty"><button onClick={() => setQ(Math.max(1, q - 1))} aria-label="Fewer">−</button><span>{q}</span><button onClick={() => setQ(q + 1)} aria-label="More">+</button></div></div>
           <div className="atc3" ref={atcRef}><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add} disabled={!v.available} style={!v.available ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}>{label}</button></div>
           <DeliveryEstimate available={v.available} />
-          <TrustBadges />
+          <TrustBadges returns60={p.returns60} />
           {comp && compV && v.available && (
             <div className="fbt">
               <h4>Frequently bought together</h4>
@@ -129,9 +148,9 @@ export default function ItemPage({ handle }) {
       </section>
 
       <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
-        <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">Store-wide reviews</span></div>
+        <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">{p.reviews ? 'More from verified Smyle Labs buyers' : 'Store-wide reviews'}</span></div>
         <div className="rv3">
-          <div className="rv3-sum"><span className="num">{SITE.rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{SITE.reviewCount.toLocaleString()} reviews across Smyle Labs</p></div>
+          <div className="rv3-sum"><span className="num">{rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{p.reviews ? `${p.reviews.toLocaleString()} reviews of the ${p.name}` : `${SITE.reviewCount.toLocaleString()} reviews across Smyle Labs`}</p></div>
           {REVIEWS.store.filter((r) => !r.photo).slice(0, 2).map((r) => (
             <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>★★★★★</span></div><span className="xs g">{r.product}</span><p>{r.text}</p></div>
           ))}

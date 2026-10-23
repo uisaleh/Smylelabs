@@ -64,8 +64,8 @@ export default function HomePage() {
       <div className="seen" aria-label="As seen on"><span>As seen on</span><b>TikTok</b><b>Instagram</b><b>Facebook</b><span>· Loved by 12,660+ customers</span></div>
 
       <section className="perks3" aria-label="Why shop with us">
-        <div><b>Free shipping</b><span>Ships from California</span></div>
-        <div><b>2–5 business days</b><span>Anywhere in the US</span></div>
+        <div><b>Free shipping</b><span>2–5 business days from California</span></div>
+        <div><b>Discreet package</b><span>No logos, no labels, just a clean box</span></div>
         <div><b>4.7★ from 12,660 reviews</b><span>From verified buyers</span></div>
         <div><b>Real people</b><span>Call, text or WhatsApp {SITE.phone}</span></div>
       </section>

@@ -54,7 +54,7 @@ export function Tile({ p, saved, onSave, delay = 0 }) {
           : <button className={'qa' + (done ? ' done' : '')} onClick={quick}>{done ? 'Added ✓' : `Quick add · ${money(p.price)}`}</button>)}
       </div>
       {onSave && <button className={'heart' + (saved ? ' on' : '')} aria-label={'Save ' + p.name} aria-pressed={!!saved} onClick={onSave}><Heart /></button>}
-      <Link href={p.href} style={{ textDecoration: 'none' }}><span className="tl-name">{p.name}</span><br /><span className="tl-price">{money(p.price)}</span>{p.variants.length > 1 && <span className="tl-rate"> · {p.variants.length} {p.option ? p.option.toLowerCase() + 's' : 'options'}</span>}</Link>
+      <Link href={p.href} style={{ textDecoration: 'none' }}><span className="tl-name">{p.name}</span><br /><span className="tl-price">{money(p.price)}</span>{p.reviews > 0 && <><br /><span className="tl-rate">★ {p.rating} ({p.reviews.toLocaleString()})</span></>}{p.variants.length > 1 && <span className="tl-rate"> · {p.variants.length} {p.option ? p.option.toLowerCase() + 's' : 'options'}</span>}</Link>
     </div>
   );
 }

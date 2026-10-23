@@ -34,11 +34,11 @@ export const ICONS = {
 };
 
 /** The four reassurance points that sit under every Add to cart. */
-export function TrustBadges() {
+export function TrustBadges({ returns60 = false }) {
   return (
     <div className="trust4" aria-label="Why buy from Smyle Labs">
       <div>{ICONS.truck}<span><b>Free shipping</b><br />2–5 business days</span></div>
-      <div>{ICONS.refresh}<span><b>Money-back guarantee</b><br />We make it right</span></div>
+      <div>{ICONS.refresh}<span><b>{returns60 ? '60-day easy returns' : 'Money-back guarantee'}</b><br />{returns60 ? 'Free US shipping too' : 'We make it right'}</span></div>
       <div>{ICONS.shield}<span><b>Warranty</b><br />on manufacturer defects</span></div>
       <div>{ICONS.lock}<span><b>Secure checkout</b><br />Encrypted payment</span></div>
     </div>

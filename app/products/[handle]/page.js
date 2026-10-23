@@ -21,7 +21,7 @@ export default function Page({ params }) {
   const ld = {
     '@context': 'https://schema.org', '@type': 'Product', name: p.title, image: p.images.slice(0, 4), description: p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 500),
     brand: { '@type': 'Brand', name: 'Smyle Labs' },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: SITE.rating, reviewCount: p.handle === INHALER ? 513 : SITE.reviewCount },
+    ...(p.reviews ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: p.rating, reviewCount: p.reviews } } : {}),
     offers: p.variants.map((v) => ({ '@type': 'Offer', sku: String(v.id), price: v.price.toFixed(2), priceCurrency: 'USD', availability: v.available ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', url: SITE.url + p.href }))
   };
   return (

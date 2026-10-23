@@ -47,6 +47,16 @@ try {
     variants: p.variants.map((v) => ({ id: v.id, title: v.title, price: v.price, compare: v.compare_at_price, available: v.available })),
     images: p.images.slice(0, 8).map((i) => i.src.split('?')[0])
   }));
+  // Per-product extras that only live on the product page: Loox rating, quantity-break bundles, returns promise.
+  await Promise.all(products.map(async (p) => {
+    try {
+      const html = await (await fetch(`${STORE}/products/${p.handle}`, { headers: { 'user-agent': 'smylelabs-web-sync' } })).text();
+      const r = html.match(/"ratingValue":\s*"([\d.]+)",\s*"reviewCount":\s*(\d+)/);
+      const txt = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      const t2 = txt.match(/MOST POPULAR\s*2 [^$]*?save (\d+)%/i), t3 = txt.match(/BEST VALUE\s*3 [^$]*?save (\d+)%/i);
+      Object.assign(p, { rating: r ? +r[1] : 0, reviews: r ? +r[2] : 0, tier2: t2 ? +t2[1] : 0, tier3: t3 ? +t3[1] : 0, returns60: /60 DAY EASY RETURNS/i.test(txt) });
+    } catch (e) { Object.assign(p, { rating: 0, reviews: 0, tier2: 0, tier3: 0, returns60: false }); }
+  }));
   await writeFile(OUT, JSON.stringify(products, null, 1));
   console.log(`[sync] cloned ${products.length} products from ${STORE}`);
 } catch (err) {

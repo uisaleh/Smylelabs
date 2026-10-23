@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { INHALER } from '@/lib/catalog';
-import { inhalerTotal, SITE } from '@/lib/site';
+import { INHALER, byHandle, tierTotal } from '@/lib/catalog';
+import { SITE } from '@/lib/site';
 
 const CartCtx = createContext(null);
 const KEY = 'smyle-cart-v1';
@@ -34,7 +34,10 @@ export function CartProvider({ children }) {
     const count = items.reduce((a, b) => a + b.qty, 0);
     const subtotal = items.reduce((a, b) => a + b.price * b.qty, 0);
     const inhalerQty = items.filter((x) => x.handle === INHALER).reduce((a, b) => a + b.qty, 0);
-    const savings = inhalerQty > 1 ? inhalerQty * 36.99 - inhalerTotal(inhalerQty) : 0;
+    // Quantity-break savings per product (same rules as the live store's bundles).
+    const byH = {};
+    items.forEach((x) => { byH[x.handle] = byH[x.handle] || { n: 0, sum: 0 }; byH[x.handle].n += x.qty; byH[x.handle].sum += x.price * x.qty; });
+    const savings = Object.entries(byH).reduce((acc, [h, g]) => { const p = byHandle(h); if (!p || !p.tiers || g.n < 2) return acc; return acc + (g.sum - tierTotal(p, g.n, g.sum / g.n)); }, 0);
     const total = subtotal - savings;
     // Shopify cart permalink: sends the shopper to the live, secure Shopify checkout.
     const checkoutUrl = items.length ? `${SITE.url}/cart/${items.map((x) => `${x.variantId}:${x.qty}`).join(',')}` : null;

@@ -26,7 +26,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_1ea8321b-4dce-4947-8f1e-3ca5d9892af4.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_aacc6daa-aa95-4671-bf36-b1d074709f83.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_b7ed7b0e-e3fb-4d78-91cc-1c0cccb91db0.png"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "controller-adapter-510-cart-battery",
@@ -54,7 +59,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_891915be-0174-4889-bbc3-b1ec9121d700.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_66b7320f-15a5-4826-98a5-87e9677fa167.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/7_692b3c35-fa81-4500-a69d-92e8daf05cae.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 6,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "herb-grinder-slot-machine",
@@ -96,7 +106,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_18f895fa-11e1-4608-974b-8cff940450ab.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_f3c5ac24-1505-4d41-92d2-5b96f2f7932a.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_3c9513fc-8128-481d-9008-1028f9ee1594.png"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "balisong-butterfly-cart-battery",
@@ -135,7 +150,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_211b39f0-0d0f-497a-aeb9-986a8afbd311.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/7_bc29e3b5-282b-4fe2-9aa7-a035a4e3dcf8.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/8_5f2e302f-82a0-4be6-b1ce-32c903ff59e4.png"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 3,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "foojamin-cart-battery-mystery-drop-limited-edition",
@@ -160,7 +180,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_7aa3808e-f62b-41b5-94e4-31b697e5abe2.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/FoojaminSmyleLabsWebsiteAssets_2.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_181292b6-d8f7-4013-aaa2-aec37cb0d1c0.png"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "cup-cart-510-battery-by-mrs-puff",
@@ -213,7 +238,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/7_95ce0c4f-d1cf-4724-aed5-0c41678d238d.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/10_e0e06f7d-251a-4898-8e55-09a2279e347a.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/18.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 32,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "rocket-pop-cart-battery",
@@ -240,7 +270,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_609af659-f8fa-4029-9381-1142741df890.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_07b44960-06dd-4673-88ea-b2d4cb13e1bc.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_492cfb84-9725-4b71-ab1c-cc1650c73992.png"
-  ]
+  ],
+  "rating": 3,
+  "reviews": 1,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "basketball-cart-battery-limited-edition",
@@ -267,7 +302,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_efc948e0-fae5-4964-807b-2eeed36eec75.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_02ecaa1d-9931-415e-8294-ca5ade2f3060.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_48a211fb-e3a5-46cb-8473-2cfb91afa2a9.png"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 1,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "tung-tung-sahur-cart-battery",
@@ -294,7 +334,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/TungTungSahurPenjaminSmyleLabs_4.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_10f9a9a0-3147-4557-bf30-61b36c4c536b.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/ProductImageSingle.png"
-  ]
+  ],
+  "rating": 4.6,
+  "reviews": 44,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "torch-penjamin-cart-battery-limited-edition",
@@ -320,7 +365,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/2_8867c8e3-21f1-4f93-9a03-c4e85b1b7400.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_cb6e89e8-ab8a-4437-9a59-0996b855c498.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_39c3d6fa-b4d9-4c23-937c-4b81abd90b4a.png"
-  ]
+  ],
+  "rating": 4.6,
+  "reviews": 9,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "tnt-penjamin-cart-battery-limited-edition",
@@ -346,7 +396,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/2_6f2599cf-230e-4b01-b145-20b5bd95af2f.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_a4180aee-1fed-4ed0-af05-4c851372f847.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_197ac68a-92df-49c1-9711-2ded09ca6634.png"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 2,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "moon-wand-cart-battery-limited-edition",
@@ -384,7 +439,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_f214d22e-4e6a-4534-ba9b-7783753217cf.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_2817c191-7336-4ef4-84d2-1d8a45cbd336.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/7_c2f320e4-0072-4d12-9815-2875e3eb16b3.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 38,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "luna-wand-cart-battery-limited-edition",
@@ -414,7 +474,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/2_b305b301-14a2-40fa-a56c-75b973b54349.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_5e7e7e43-e3c0-48cc-a1cb-32922f7ae426.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_3db55ef3-a81b-4197-93d5-ef994628b1dd.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 48,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "inhaler-3-pack-replaceable-filters",
@@ -440,7 +505,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_a3b015f1-c8f2-4cef-83bf-440e3e501800.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_40b6da42-9038-477e-92fa-5f9a33c93127.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_bc9174b8-9c66-4283-8a13-3ccf018126e9.png"
-  ]
+  ],
+  "rating": 4.6,
+  "reviews": 19,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "inhaler-cart-battery",
@@ -496,7 +566,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/InahlerCartBatteryPenjamin-What_sinthebox.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Inahler_Cart_Battery_Penjamin_-_Adjustable_Voltage.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/InahlerCartBatteryPenjamin-5ColorOptions.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 520,
+  "tier2": 11,
+  "tier3": 16,
+  "returns60": true
  },
  {
   "handle": "smyle-labs-trucker-hat",
@@ -517,7 +592,12 @@
   ],
   "images": [
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/TRUCKERHAT.png"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "robotjamin-cart-battery",
@@ -545,7 +625,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Robotjamin_Music_and_Sound_d2f6cf72-0c2d-4dbf-b673-0f3bfc19490b.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Robotjamin_Package_Included_Items_e6995307-792a-441b-832e-9383142af0df.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Robotjamin_Remote_Controller_62df7c4b-5b69-4494-bc56-c07388a6bf37.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 76,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "french-purse-cart-battery",
@@ -572,7 +657,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/3_2823c07e-8069-441c-b2cd-13191108ebd5.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_ce0b1075-f666-4f74-8b33-4e619530010a.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_92a9b0d7-fdcb-4cac-a02f-84d1ce080e5a.png"
-  ]
+  ],
+  "rating": 4,
+  "reviews": 1,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "heartjamin-cart-battery",
@@ -605,7 +695,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Heartjamin_Cart_Battery_Front_1b9d5697-31d5-4099-be71-0b965cd3155d.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/6_bbe6015a-1001-4d5b-838a-b008b8f49447.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_a1e9f5ed-9553-4319-9c87-a7ea8ce38666.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 37,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "purse-510-cart-battery",
@@ -684,7 +779,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/2_29227b50-1a34-412c-857d-faaa9e976736.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/8_509f7178-bd24-426a-a884-40673b39f594.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/9_5b08ff78-45ef-4c2e-9931-d561dcd1d80d.png"
-  ]
+  ],
+  "rating": 4.5,
+  "reviews": 110,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "smyle-labs-classic-logo-shirt",
@@ -756,7 +856,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/unisex-classic-tee-black-front-685dbd31cc20d.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/unisex-classic-tee-black-front-2-685dbd31cd3d7.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/unisex-classic-tee-black-front-685dbd31cdfdb.png"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "mini-plug-510-cart-battery",
@@ -828,7 +933,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Mini_Plug_Smyle_Labs_Website_Assets_2.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Mini_Plug_Smyle_Labs_Website_Assets.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/9.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 209,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "smyle-clothing",
@@ -919,7 +1029,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/SHOES.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/SANDALS.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PANTS.png"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 1,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "saber-shaped-gas-torch",
@@ -966,7 +1081,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Saber_Torch_Red.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Saber_Torch_Blue.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Saber_Torch_Purple.png"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 1,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "raygun-mini-torch-lighter-with-lights-sound",
@@ -1029,7 +1149,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Raygun_Mini_Torch_Lighter_RAINBOW.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Raygun_Mini_Torch_Lighter_SILVER.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Raygun_Mini_Torch_Lighter_GOLD.png"
-  ]
+  ],
+  "rating": 4,
+  "reviews": 21,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "penjamin-marker-replacement-ink-tips-2-pack",
@@ -1050,7 +1175,12 @@
   ],
   "images": [
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PenjaminCartPensInkReplacementPink.jpg"
-  ]
+  ],
+  "rating": 5,
+  "reviews": 5,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "raygun-penjamin-battery",
@@ -1106,7 +1236,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Raygun_Penjamin_Gold.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Raygun_Penjamin_Purple.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Raygun_Penjamin_Glow.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 388,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "lavender-aromatherapy-mist-cartridge-kit",
@@ -1129,7 +1264,12 @@
   ],
   "images": [
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/WhatsAppImage2025-01-06at11.09.49_ea3b95c3.jpg"
-  ]
+  ],
+  "rating": 3.7,
+  "reviews": 3,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "permanent-marker-cart-battery-by-smyle-labs",
@@ -1160,7 +1300,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Marker_Penjamin_Battery_Features.jpg",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Black_Marker_Penjamin_Battery_by_Smyle_Labs.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Silver_Marker_Penjamin_Battery_by_Smyle_Labs.png"
-  ]
+  ],
+  "rating": 4.3,
+  "reviews": 162,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "gas-pump-shaped-torch-flame",
@@ -1208,7 +1353,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Gas_Pump_Torch_-_Black.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Gas_Pump_Torch_-_Green.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Fyre_Gas_Pump_Torch_-_Yellow.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 21,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "lip-balm-penjamin-by-smyle-labs",
@@ -1248,7 +1398,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Lip_Balm_Penjamin_Cart_Battery_-_Blue_and_Black.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Lip_Balm_Penjamin_Cart_Battery_-_Red_and_Black.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Lip_Balm_Penjamin_Cart_Battery_-_Red_and_Pink.png"
-  ]
+  ],
+  "rating": 3.8,
+  "reviews": 291,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": true
  },
  {
   "handle": "wandjamin-battery-by-smyle-labs",
@@ -1283,7 +1438,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Wand_Adjustable_Temp_Modes.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/8_246c01d3-d5b9-46c8-9bda-add4cdebdb8d.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/7_9592be95-761f-40ce-bfc9-d691c2ba2ea6.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 725,
+  "tier2": 15,
+  "tier3": 24,
+  "returns60": true
  },
  {
   "handle": "green-monster-flashlight-battery",
@@ -1306,7 +1466,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsGreenMonsterCartBatte.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsGreenMonsterwFlashlig.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsGreenMonsterwFlashlight.png"
-  ]
+  ],
+  "rating": 3.5,
+  "reviews": 2,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "red-ball-flashlight-battery",
@@ -1331,7 +1496,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Details_Ninja_battery.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsRedBallwFlashlight.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsRedBallwFlashlightBack.png"
-  ]
+  ],
+  "rating": 4.5,
+  "reviews": 2,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "penjamin-car-key-cartridge-magnet-replacement-2-pack",
@@ -1352,7 +1522,12 @@
   ],
   "images": [
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PenjaminCartPensInkReplacementPink.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 26,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "penjamin-car-key-tip-replacement",
@@ -1382,7 +1557,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PenjaminCarKeyReplacementTipsImage.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Car_Key_Replacement_Tips_Black_6c8eb610-ff41-488c-8acb-20c8df69d003.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Car_Key_Replacement_Tips_White_7be15a9d-ca2c-49a0-9173-19fb340a7880.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 37,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "herbie-flashlight-battery",
@@ -1411,7 +1591,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbieCartBattery.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbiewFlashlight.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbiewFlashlightBack.png"
-  ]
+  ],
+  "rating": 4.9,
+  "reviews": 30,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "car-key-penjamin-by-smyle-labs",
@@ -1460,7 +1645,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Customer_Testimonial_Smyle_Labs_Penjamin_Car_Key_1.jpg",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Key_Adjustable_Temp_Modes.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Car_Key_Included_Accessories.png"
-  ]
+  ],
+  "rating": 4.6,
+  "reviews": 3025,
+  "tier2": 13,
+  "tier3": 21,
+  "returns60": true
  },
  {
   "handle": "smyle-labs-pen",
@@ -1544,7 +1734,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/What_Comes_With_Smyle_Labs_Penjamin.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Cart_Penjamin_Smyle_Labs_Adjustable_Temp_Modes.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/1_b55dd224-480e-4531-bdc9-0addc53ffd91.png"
-  ]
+  ],
+  "rating": 4.7,
+  "reviews": 4487,
+  "tier2": 13,
+  "tier3": 21,
+  "returns60": false
  },
  {
   "handle": "ninja-flashlight-battery",
@@ -1571,7 +1766,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsNinjaCartBattery.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsNinjawFlashlightBack.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsNinjawFlashlight.png"
-  ]
+  ],
+  "rating": 4.9,
+  "reviews": 11,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "danksaber",
@@ -1617,7 +1817,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Penjamin_Danksaber_Green_Edition.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Penjamin_Danksaber_Purple_Edition.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Smyle_Labs_Penjamin_Danksaber_Red_Edition.png"
-  ]
+  ],
+  "rating": 4.2,
+  "reviews": 496,
+  "tier2": 13,
+  "tier3": 21,
+  "returns60": false
  },
  {
   "handle": "perfection-aromatherapy-oil-lavender-eucalpytus",
@@ -1639,7 +1844,12 @@
   "images": [
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/eucalpytus1.jpg",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/eucalyptus2.webp"
-  ]
+  ],
+  "rating": 0,
+  "reviews": 0,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "penjamin-cart-pen-ink-replacement",
@@ -1723,7 +1933,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Cart_Pens_Ink_Replacement_Silver.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Cart_Pens_Ink_Replacement_Sky.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Penjamin_Cart_Pens_Ink_Replacement_White.png"
-  ]
+  ],
+  "rating": 4.8,
+  "reviews": 70,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "cart-pen-replacement-tip",
@@ -1800,7 +2015,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/RedPenTip.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PurplePenTip.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/TiffanyPenTip.png"
-  ]
+  ],
+  "rating": 4.5,
+  "reviews": 97,
+  "tier2": 0,
+  "tier3": 0,
+  "returns60": false
  },
  {
   "handle": "downstem-soaker-by-smyle-labs",
@@ -1828,7 +2048,12 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/5_436ccbfb-dc66-4303-9491-4d10f681f42e.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/4_4f192694-d7eb-4b3a-ae27-6e2df32f05f4.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/1_0aa30c80-3af8-4bd1-aa98-a7c6b9cfe236.png"
-  ]
+  ],
+  "rating": 4.9,
+  "reviews": 364,
+  "tier2": 10,
+  "tier3": 18,
+  "returns60": false
  },
  {
   "handle": "pixel-torch",
@@ -1870,6 +2095,11 @@
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/PIXELTORCHBYSMYLELABSLIFESTYLE.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Pixel-Torch-Blue2.png",
    "https://cdn.shopify.com/s/files/1/0788/1791/9289/files/Pixel-Torch-Yellow2.png"
-  ]
+  ],
+  "rating": 4.9,
+  "reviews": 414,
+  "tier2": 5,
+  "tier3": 8,
+  "returns60": false
  }
 ]

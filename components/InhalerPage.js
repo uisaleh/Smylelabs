@@ -62,7 +62,7 @@ export default function InhalerPage({ handle }) {
           <div className="feat-ic" aria-label="Key parts">
             {[['airflow', 'Cloud filter'], ['cart', '510 cart'], ['cover-long', 'Long cover'], ['usb-c', 'USB-C'], ['box', 'Retail box']].map(([f, n]) => <span key={f} title={n}><img src={`/assets/inhaler/${f}.webp`} alt={n} /></span>)}
           </div>
-          <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>4.7</b> · 513 reviews</a>
+          <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>4.7</b> · {p.reviews || 520} reviews</a>
           <ul className="dots3"><li>Built-in personal cloud filter in the base</li><li>Fits 0.5–1.0g 510 carts, short and long</li><li>4 voltages: 2.2V, 2.7V, 3.1V, 3.6V</li><li>USB-C charging</li></ul>
           <p style={{ fontSize: 13, color: '#4A4A4A' }}>A discreet 510 battery that looks like an everyday inhaler. Your cart hides inside, and every exhale goes through the filter in the base.</p>
 
@@ -99,7 +99,7 @@ export default function InhalerPage({ handle }) {
 
           <div className="atc3" ref={atcRef}><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add}>{label}</button></div>
           <DeliveryEstimate available />
-          <TrustBadges />
+          <TrustBadges returns60 />
           <p className="xs g">Cart (oil) not included · Free shipping from California</p>
           <Accordion first={0} html items={[
             ['Full description', p.body],
@@ -125,7 +125,7 @@ export default function InhalerPage({ handle }) {
       <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
         <div className="sec3-h"><p className="br">[customers say]</p><button className="sm ul" style={{ background: 'none', border: 0, cursor: 'pointer', font: 'inherit', padding: '10px 0', color: '#131313' }} onClick={() => setAll(!all)} aria-expanded={all}>{all ? 'Show less' : 'View all reviews'}</button></div>
         <div className="rv3">
-          <div className="rv3-sum"><span className="num">4.7</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>Based on 513 reviews from verified buyers</p></div>
+          <div className="rv3-sum"><span className="num">4.7</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>Based on {p.reviews || 520} reviews from verified buyers</p></div>
           {revs.map((r) => <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>{stars(r.stars)}</span></div><span className="xs g">Verified buyer</span><p>{r.text}</p></div>)}
         </div>
       </section>
