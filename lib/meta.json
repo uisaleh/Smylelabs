@@ -216,7 +216,7 @@
     ],
     "intro": "The classic Smyle trucker hat in black with the yellow Smyle logo.",
     "features": [],
-    "photo": "/assets/photo/trucker-hat.webp"
+    "cut": "/assets/cut/trucker-hat.webp"
   },
   "robotjamin-cart-battery": {
     "name": "Robotjamin + Remote Controller",
