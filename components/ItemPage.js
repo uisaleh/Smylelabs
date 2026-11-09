@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'red-ball-flashlight-battery': {
+    src: '/assets/cut/red-ball.webp',
+    spots: [
+      { cx: 49.2, cy: 26.6, x: 33, y: 24, title: 'Twist-on 510', text: 'Twist your accessories right onto the top.' },
+      { cx: 44, cy: 80, x: 33, y: 76, title: 'Palm-sized sphere', text: 'Fits comfortably in your hand.' },
+      { cx: 52, cy: 14.6, x: 67, y: 20, side: 'r', title: 'Flashlight bulb included', text: 'A powerful beam for nighttime adventures.' },
+      { cx: 50.5, cy: 60.3, x: 67, y: 70, side: 'r', title: 'Contrasting button', text: 'Durable build made for everyday carry.' }
+    ]
+  },
   'lavender-aromatherapy-mist-cartridge-kit': {
     src: '/assets/cut/aroma-cart.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [
