@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'french-purse-cart-battery': {
+    src: '/assets/cut/french-purse.webp',
+    spots: [
+      { cx: 35.8, cy: 22.5, x: 30, y: 20, title: 'Gold hardware and clip', text: 'Clip it to your bag like a charm.' },
+      { cx: 45.5, cy: 71, x: 30, y: 76, title: 'Orange leather mini purse', text: 'Fall limited edition, made to be seen.' },
+      { cx: 59.5, cy: 33, x: 70, y: 24, side: 'r', title: 'Standard 510 cart', text: 'Your cart clicks in at the top.' },
+      { cx: 54.7, cy: 58.4, x: 70, y: 70, side: 'r', title: 'Adjustable voltage', text: 'Plus a preheat setting, right on the side button.' }
+    ]
+  },
   'smyle-labs-trucker-hat': {
     src: '/assets/photo/trucker-hat.webp', bg: '#000',
     spots: [
