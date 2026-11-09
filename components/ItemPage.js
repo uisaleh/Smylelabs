@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'mini-plug-510-cart-battery': {
+    src: '/assets/cut/mini-plug.webp',
+    spots: [
+      { cx: 45.7, cy: 49.2, x: 37, y: 30, title: 'Full-color LED display', text: 'Voltage and battery level at a glance.' },
+      { cx: 45.2, cy: 84, x: 37, y: 76, title: 'Built-in USB-C cable', text: 'Tucks into the body. Plug in anywhere.' },
+      { cx: 56.5, cy: 20, x: 63, y: 24, side: 'r', title: 'Pocket-sized', text: 'Compact and discreet, made for life on the go.' },
+      { cx: 53, cy: 68.5, x: 63, y: 70, side: 'r', title: 'Adjustable voltage', text: 'Dial it in with the + and − buttons.' }
+    ]
+  },
   'heartjamin-cart-battery': {
     src: '/assets/cut/heartjamin.webp',
     spots: [

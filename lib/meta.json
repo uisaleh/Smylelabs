@@ -320,7 +320,8 @@
       "Pocket-sized"
     ],
     "badge": "New",
-    "look": "Pocket"
+    "look": "Pocket",
+    "card": "/assets/cut/mini-plug.webp"
   },
   "smyle-clothing": {
     "name": "Smyle Clothing",
