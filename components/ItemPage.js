@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'purse-510-cart-battery': {
+    src: '/assets/cut/pursejamin.webp',
+    spots: [
+      { cx: 29.1, cy: 19, x: 22, y: 24, title: 'Built-in keychain ring', text: 'Clip it to your bag or belt.' },
+      { cx: 34.4, cy: 68.5, x: 22, y: 74, title: 'Hidden cart storage', text: 'Carry a spare cartridge, up to 1g.' },
+      { cx: 61.1, cy: 29, x: 78, y: 22, side: 'r', title: 'Universal 510 thread', text: 'Works with standard 510 carts.' },
+      { cx: 58.7, cy: 52.5, x: 78, y: 70, side: 'r', title: '3 voltages + preheat', text: '3.0V / 3.3V / 3.6V and USB-C charging.' }
+    ]
+  },
   'herbie-flashlight-battery': {
     src: 'https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbiewFlashlight.png?width=1000',
     spots: [

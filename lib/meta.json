@@ -281,7 +281,8 @@
       "Hidden cart storage (up to 1g)",
       "Universal 510 thread"
     ],
-    "look": "Bag charm"
+    "look": "Bag charm",
+    "cut": "/assets/cut/pursejamin.webp"
   },
   "smyle-labs-classic-logo-shirt": {
     "name": "Smyle Labs Classic Logo Shirt",
