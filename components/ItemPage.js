@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'penjamin-marker-replacement-ink-tips-2-pack': {
+    src: '/assets/cut/marker-tips.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 37.1, cy: 25, x: 28, y: 22, title: 'Permanent ink tip', text: 'A fresh writing experience every time.' },
+      { cx: 38.1, cy: 75.7, x: 28, y: 76, title: 'Insert and go', text: 'Simply push it into the marker body.' },
+      { cx: 61.7, cy: 17.4, x: 72, y: 24, side: 'r', title: 'Clear protective cap', text: 'Keeps the tip fresh until you need it.' },
+      { cx: 61.3, cy: 58.8, x: 72, y: 72, side: 'r', title: '2 tips per pack', text: 'Made for the Penjamin Marker by Smyle Labs.' }
+    ]
+  },
   'smyle-clothing': {
     src: '/assets/cut/smyle-hoodie.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#5A5A57 0%,#2A2A28 60%,#161616 100%)',
     spots: [

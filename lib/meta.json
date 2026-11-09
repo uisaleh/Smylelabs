@@ -374,7 +374,8 @@
       "accessories"
     ],
     "intro": "Two replacement permanent ink tips for your Penjamin Marker. Insert into the marker body for a fresh writing experience.",
-    "features": []
+    "features": [],
+    "card": "/assets/cut/marker-tips.webp"
   },
   "raygun-penjamin-battery": {
     "name": "Raygun Penjamin Battery",
