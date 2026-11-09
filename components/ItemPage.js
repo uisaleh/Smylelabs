@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'herb-grinder-slot-machine': {
+    src: '/assets/cut/slot-grinder.webp',
+    spots: [
+      { cx: 34.9, cy: 28.2, x: 24, y: 24, title: 'Working slot reels + LEDs', text: 'Pull the side crank and the reels really spin.' },
+      { cx: 37, cy: 68, x: 24, y: 74, title: 'Removable bottom cover', text: 'Makes cleaning quick and easy.' },
+      { cx: 62.3, cy: 45.8, x: 76, y: 30, side: 'r', title: '2-inch metal grinder', text: 'Removable, with sharp diamond-cut teeth.' },
+      { cx: 52.4, cy: 81.9, x: 76, y: 74, side: 'r', title: 'Pull-out collection drawer', text: 'A screen catches everything for easy access.' }
+    ]
+  },
   'french-purse-cart-battery': {
     src: '/assets/cut/french-purse.webp',
     spots: [
