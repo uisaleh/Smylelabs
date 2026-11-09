@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'luna-wand-cart-battery-limited-edition': {
+    src: '/assets/cut/luna-wand.webp',
+    spots: [
+      { cx: 49.6, cy: 23, x: 35, y: 22, title: 'Universal 510 thread', text: 'Twist on any standard cart.' },
+      { cx: 49.7, cy: 67.6, x: 35, y: 74, title: 'Discreet fire button', text: 'Built right into the handle. USB-C charging too.' },
+      { cx: 52.9, cy: 41.8, x: 65, y: 32, side: 'r', title: 'Red-to-pink chrome moon', text: 'Topped with a little golden crown.' },
+      { cx: 51.5, cy: 60, x: 65, y: 66, side: 'r', title: 'Jeweled heart + wings', text: 'Butterfly wing details and gold accents.' }
+    ]
+  },
   'balisong-butterfly-cart-battery': {
     src: '/assets/cut/balisong.webp',
     spots: [

@@ -212,7 +212,8 @@
       "USB-C charging",
       "A conversation piece"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/luna-wand.webp"
   },
   "smyle-labs-trucker-hat": {
     "name": "Smyle Labs Trucker Hat",
