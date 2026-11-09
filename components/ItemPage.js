@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'permanent-marker-cart-battery-by-smyle-labs': {
+    src: '/assets/cut/marker-pen.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 54.5, cy: 34.3, x: 34, y: 24, title: 'Hides carts up to 4g', text: 'Fits 0.5g up to 4.0g carts inside.' },
+      { cx: 42.2, cy: 88, x: 34, y: 76, title: 'Working permanent marker', text: 'It really writes, so it looks the part.' },
+      { cx: 58.5, cy: 14.3, x: 66, y: 22, side: 'r', title: 'Extra tall cap included', text: 'For the bigger carts.' },
+      { cx: 60, cy: 45.2, x: 66, y: 66, side: 'r', title: 'Preheat + variable voltage', text: 'Plus a USB-C port for charging.' }
+    ]
+  },
   'penjamin-marker-replacement-ink-tips-2-pack': {
     src: '/assets/cut/marker-tips.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [

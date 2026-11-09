@@ -419,7 +419,8 @@
       "Preheat + variable voltage",
       "USB-C port"
     ],
-    "look": "Pen"
+    "look": "Pen",
+    "card": "/assets/cut/marker-pen.webp"
   },
   "gas-pump-shaped-torch-flame": {
     "name": "Gas Pump Kitchen Torch",
