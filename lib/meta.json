@@ -273,7 +273,8 @@
       "Magnetic halves form one heart",
       "Steady 3.6V output"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/heartjamin.webp"
   },
   "purse-510-cart-battery": {
     "name": "Pursejamin Purse Cart Battery",

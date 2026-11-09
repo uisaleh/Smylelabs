@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'heartjamin-cart-battery': {
+    src: '/assets/cut/heartjamin.webp',
+    spots: [
+      { cx: 44.4, cy: 29.3, x: 34, y: 24, title: 'Steady 3.6V output', text: 'Simple button activation on each half.' },
+      { cx: 48, cy: 81.7, x: 34, y: 76, title: 'USB-C charging', text: 'Built right into each battery.' },
+      { cx: 51.6, cy: 55.6, x: 66, y: 32, side: 'r', title: 'Magnetic halves', text: 'They snap together to form one heart.' },
+      { cx: 57.4, cy: 70, x: 66, y: 72, side: 'r', title: '2 batteries in 1', text: 'Share one side with your partner, or keep both.' }
+    ]
+  },
   'robotjamin-cart-battery': {
     src: '/assets/cut/robotjamin.webp',
     spots: [
