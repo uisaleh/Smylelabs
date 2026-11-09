@@ -43,7 +43,8 @@
       "Removable 2-inch metal grinder",
       "Diamond-cut teeth",
       "Screened collection drawer"
-    ]
+    ],
+    "cut": "/assets/cut/slot-grinder.webp"
   },
   "balisong-butterfly-cart-battery": {
     "name": "Balisong Butterfly Cart Battery",
