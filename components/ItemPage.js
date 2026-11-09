@@ -65,6 +65,19 @@ function steps(p) {
   return null;
 }
 
+// Custom artwork + callouts for the "So, what is it?" section.
+const MEET = {
+  'smyle-labs-trucker-hat': {
+    src: '/assets/photo/trucker-hat.webp', bg: '#000',
+    spots: [
+      { cx: 43.5, cy: 47, x: 33, y: 30, title: 'Yellow Smyle logo', text: 'The signature script logo, front and center.' },
+      { cx: 45, cy: 79, x: 33, y: 76, title: 'Curved brim', text: 'Classic trucker shape that keeps the sun off.' },
+      { cx: 49, cy: 17, x: 67, y: 24, side: 'r', title: 'Tall front panel', text: 'Plenty of room for the logo to shine.' },
+      { cx: 61, cy: 46, x: 67, y: 66, side: 'r', title: 'Breathable mesh back', text: 'Stays cool on warm California days.' }
+    ]
+  }
+};
+
 const COMPANION = {
   'smyle-labs-pen': 'cart-pen-replacement-tip', 'car-key-penjamin-by-smyle-labs': 'penjamin-car-key-tip-replacement',
   'permanent-marker-cart-battery-by-smyle-labs': 'penjamin-marker-replacement-ink-tips-2-pack', 'danksaber': 'penjamin-car-key-cartridge-magnet-replacement-2-pack',
@@ -83,7 +96,7 @@ export default function ItemPage({ handle }) {
   const [atcRef, show] = useWatch();
 
   const v = p.variants[vi];
-  const shots = (p.cut ? [{ src: p.cut, cut: true, alt: p.name }] : []).concat(p.images.map((s) => ({ src: img(s, 1100), th: img(s, 160), alt: p.name })));
+  const shots = (p.cut ? [{ src: p.cut, cut: true, alt: p.name }] : p.photo ? [{ src: p.photo, alt: p.name, bg: '#000' }] : []).concat(p.images.map((s) => ({ src: img(s, 1100), th: img(s, 160), alt: p.name })));
   const cat = CATEGORIES.find((c) => c.id === p.cats[0]) || CATEGORIES[0];
   const k = kind(p);
   const intro = p.intro || p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 240);
@@ -99,7 +112,9 @@ export default function ItemPage({ handle }) {
   const DEF = [['Free shipping', 'From California in 2–5 business days.'], ['Warranty included', 'Manufacturer defects are on us.'], ['Plain, discreet box', 'No logos or labels on the outside.'], ['Real people support', `Text or WhatsApp ${SITE.phone}.`]];
   const callouts = [...feats.map((f) => [f, '']), ...DEF].slice(0, 4);
   const POS = p.cut ? [{ cx: 48, cy: 26, x: 33, y: 22 }, { cx: 48.5, cy: 70, x: 33, y: 76 }, { cx: 51.5, cy: 36, x: 67, y: 30, side: 'r' }, { cx: 51.5, cy: 76, x: 67, y: 72, side: 'r' }] : [{ cx: 40, cy: 28, x: 31, y: 22 }, { cx: 41, cy: 70, x: 31, y: 76 }, { cx: 60, cy: 34, x: 69, y: 30, side: 'r' }, { cx: 59, cy: 74, x: 69, y: 72, side: 'r' }];
-  const spots = callouts.map(([title, text], i) => ({ ...POS[i], title, text }));
+  let spots = callouts.map(([title, text], i) => ({ ...POS[i], title, text }));
+  const meet = MEET[p.handle];
+  if (meet) spots = meet.spots;
   const short = p.name.split(' ').slice(0, 3).join(' ');
 
   const add = () => {
@@ -187,7 +202,7 @@ export default function ItemPage({ handle }) {
       <section className="v-sec v-dk">
         <div className="v-wrap">
           <Head dark tag="So, what is it?" title={<>Hey, meet the<br />{p.name}.</>} text={intro} />
-          <Hotspots photo={!p.cut} src={p.cut || img(p.images[0], 1000)} alt={p.name} spots={spots} />
+          <Hotspots photo={!meet && !p.cut} src={meet ? meet.src : p.cut || img(p.images[0], 1000)} bg={meet && meet.bg} alt={p.name} spots={spots} />
         </div>
       </section>
 
