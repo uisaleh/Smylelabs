@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'rocket-pop-cart-battery': {
+    src: '/assets/cut/rocket-pop.webp',
+    spots: [
+      { cx: 49.8, cy: 21, x: 34, y: 20, title: 'Standard 510 carts', text: 'Your cartridge stays securely attached.' },
+      { cx: 49.8, cy: 84, x: 34, y: 78, title: 'About 8 inches tall', text: 'A standout collectible that looks great on display.' },
+      { cx: 50.8, cy: 36, x: 66, y: 34, side: 'r', title: 'Built-in fidget spin', text: 'A satisfying spin while you hold it.' },
+      { cx: 50.8, cy: 66, x: 66, y: 70, side: 'r', title: 'USB-C rechargeable', text: 'Lightweight and comfortable to hold.' }
+    ]
+  },
   'purse-510-cart-battery': {
     src: '/assets/cut/pursejamin.webp',
     spots: [
@@ -177,7 +186,7 @@ export default function ItemPage({ handle }) {
           <div className="v-buy">
             <div className="chips">{p.badge && <span className="chip y">{p.badge}</span>}{v.available ? <span className="chip ok">● In stock</span> : <span className="chip">Sold out</span>}<span className="chip">Free shipping</span></div>
             <h1>{p.name}</h1>
-            <a className="v-rate" href="#reviews"><span className="st">★★★★★</span><b style={{ fontWeight: 600 }}>{rating}</b><u>{rcount.toLocaleString()} {p.reviews ? 'reviews' : 'store reviews'}</u></a>
+            <a className="v-rate" href="#reviews"><span className="st">★★★★★</span><b style={{ fontWeight: 600 }}>{rating}</b><u>{rcount.toLocaleString()} {p.reviews ? (p.reviews === 1 ? 'review' : 'reviews') : 'store reviews'}</u></a>
             <div className="v-price"><b>{money(total)}</b>{pct > 0 && <><s>{money(v.price * q)}</s><span className="chip y">Save {pct}%</span></>}{!pct && v.compare > v.price && <><s>{money(v.compare)}</s><span className="chip y">Save {money(v.compare - v.price)}</span></>}{q > 1 && <span style={{ fontSize: 13, color: '#6B6B6B' }}>{money(total / q)} each</span>}</div>
             <p className="lede">{intro}</p>
             {feats.length > 0 && <ul className="v-checks">{feats.map((f) => <li key={f}><Check />{f}</li>)}</ul>}

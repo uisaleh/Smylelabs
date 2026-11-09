@@ -110,7 +110,8 @@
       "Built-in fidget spin",
       "About 8 inches tall"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "cut": "/assets/cut/rocket-pop.webp"
   },
   "basketball-cart-battery-limited-edition": {
     "name": "Basketball Cart Battery",
