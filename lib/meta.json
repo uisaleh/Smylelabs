@@ -334,7 +334,8 @@
       "Shirts and hoodies",
       "Pants and sweatpants",
       "Footwear and socks"
-    ]
+    ],
+    "card": "/assets/cut/smyle-hoodie.webp"
   },
   "saber-shaped-gas-torch": {
     "name": "Saber Kitchen Torch",

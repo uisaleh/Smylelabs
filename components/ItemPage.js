@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'smyle-clothing': {
+    src: '/assets/cut/smyle-hoodie.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#5A5A57 0%,#2A2A28 60%,#161616 100%)',
+    spots: [
+      { cx: 45.6, cy: 43.4, x: 25, y: 26, title: 'Yellow Smyle logo', text: 'The signature script, front and center.' },
+      { cx: 48.5, cy: 71.5, x: 25, y: 76, title: 'Cozy front pocket', text: 'Hoodies made for comfort, home or outdoors.' },
+      { cx: 52, cy: 19, x: 75, y: 24, side: 'r', title: '10 styles to pick from', text: 'Hoodies, hats, tees, socks, shoes and more.' },
+      { cx: 66.5, cy: 75, x: 75, y: 72, side: 'r', title: 'Premium materials', text: 'Feel good and do good with every purchase.' }
+    ]
+  },
   'mini-plug-510-cart-battery': {
     src: '/assets/cut/mini-plug.webp',
     spots: [
