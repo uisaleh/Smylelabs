@@ -127,7 +127,8 @@
       "USB-C rechargeable",
       "2.5 inches tall"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/basketball.webp"
   },
   "tung-tung-sahur-cart-battery": {
     "name": "Tung Tung Sahur 510 Cart Battery",

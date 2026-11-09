@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'basketball-cart-battery-limited-edition': {
+    src: '/assets/cut/basketball.webp',
+    spots: [
+      { cx: 49.9, cy: 33.6, x: 35, y: 28, title: 'Standard 510 thread', text: 'Easy to use with compatible cartridges.' },
+      { cx: 45.3, cy: 64, x: 35, y: 74, title: 'Mini basketball design', text: 'That playful Smyle Labs look, full-court.' },
+      { cx: 57.1, cy: 56, x: 65, y: 42, side: 'r', title: 'Just 2.5 inches tall', text: 'Small enough to carry or display anywhere.' },
+      { cx: 57.6, cy: 80, x: 65, y: 76, side: 'r', title: 'USB-C rechargeable', text: 'Powering up is simple.' }
+    ]
+  },
   'tung-tung-sahur-cart-battery': {
     src: '/assets/cut/tung-tung-sahur.webp',
     spots: [

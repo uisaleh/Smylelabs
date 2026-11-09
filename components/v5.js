@@ -64,7 +64,7 @@ export function PCard({ p, delay = 0 }) {
     <div className="v-pc" data-r style={{ '--d': delay + 'ms' }}>
       <Link className="v-pc-im" href={p.href} aria-label={p.name}>
         <span className="chips">{p.badge && <span className={'chip' + (/new|best/i.test(p.badge) ? ' y' : '')}>{p.badge}</span>}{!p.available && <span className="chip">Sold out</span>}{p.tiers && p.available && <span className="chip k">Save up to {p.tiers[1]}%</span>}</span>
-        <img className={p.cut ? 'c' : 's'} src={thumb(p, 600)} alt={p.name} loading="lazy" />
+        <img className={p.cut || p.card ? 'c' : 's'} src={thumb(p, 600)} alt={p.name} loading="lazy" />
       </Link>
       <button className={'v-heart' + (saved ? ' on' : '')} aria-label={'Save ' + p.name} aria-pressed={saved} onClick={() => setSaved(!saved)}><Heart /></button>
       {p.available && (many
