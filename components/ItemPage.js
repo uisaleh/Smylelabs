@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'herbie-flashlight-battery': {
+    src: 'https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbiewFlashlight.png?width=1000',
+    spots: [
+      { cx: 49.5, cy: 31, x: 33, y: 24, title: 'Twist-on 510', text: 'Twist your accessories right onto the top.' },
+      { cx: 47, cy: 48, x: 33, y: 74, title: 'Charming character design', text: 'A round, pink buddy that wins hearts.' },
+      { cx: 50.5, cy: 22, x: 67, y: 22, side: 'r', title: 'Flashlight bulb included', text: 'Twist it on and light up any space.' },
+      { cx: 55, cy: 77, x: 67, y: 74, side: 'r', title: 'Compact and lightweight', text: 'Easy to carry everywhere you go.' }
+    ]
+  },
   'herb-grinder-slot-machine': {
     src: '/assets/cut/slot-grinder.webp',
     spots: [
