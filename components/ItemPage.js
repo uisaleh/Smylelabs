@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'moon-wand-cart-battery-limited-edition': {
+    src: '/assets/cut/moon-wand.webp',
+    spots: [
+      { cx: 37.1, cy: 33, x: 28, y: 24, title: 'LED lights in the orb', text: 'They glow through the chrome for a light show.' },
+      { cx: 37.9, cy: 55, x: 28, y: 72, title: 'Discreet fire button', text: 'Built into the pastel pink handle.' },
+      { cx: 57.4, cy: 55.5, x: 72, y: 26, side: 'r', title: '510 thread on top', text: 'Twist any standard cart onto the orb.' },
+      { cx: 59, cy: 72, x: 72, y: 72, side: 'r', title: 'Built-in sound speaker', text: 'Magical sound effects every time. Runs on 2x AA (not included).' }
+    ]
+  },
   'luna-wand-cart-battery-limited-edition': {
     src: '/assets/cut/luna-wand.webp',
     spots: [

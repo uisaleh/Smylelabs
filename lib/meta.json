@@ -196,7 +196,8 @@
       "Discreet fire button in the handle",
       "Runs on 2x AA batteries (not included)"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/moon-wand.webp"
   },
   "luna-wand-cart-battery-limited-edition": {
     "name": "Luna Wand Cart Battery",
