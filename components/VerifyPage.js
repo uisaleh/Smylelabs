@@ -26,8 +26,7 @@ export default function VerifyPage() {
     <>
       <section className="pg3">
         <div className="pg3-l">
-          <p className="br">[product verify]</p>
-          <h1 className="up d1">Is it real?<br />Check in seconds</h1>
+          <h2 className="v-h2">Enter your code</h2>
           <p className="lead">Scratch off the verification label on the back of your product and enter the code below.</p>
           <ol className="num3">
             <li><b>01</b><span>Find the verification label on the back of your product.</span></li>

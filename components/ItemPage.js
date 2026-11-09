@@ -2,36 +2,67 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
-import { Accordion, Heart, Tile } from '@/components/ui';
-import { DeliveryEstimate, StickyATC, TrustBadges, useStickyWatch } from '@/components/cro';
+import { Heart } from '@/components/ui';
+import { Btn, ChatQA, Check, Gallery, Head, Marquee, PCard, Tag } from '@/components/v5';
+import { Details, FloatBar, Ship, Trust, useWatch } from '@/components/pdp';
 import { CATEGORIES, byHandle, img, money, related, thumb, tierTotal } from '@/lib/catalog';
 import { REVIEWS, SITE } from '@/lib/site';
 
+function kind(p) {
+  if (p.cats.includes('torches')) return 'torch';
+  if (p.cats.includes('batteries')) return 'battery';
+  if (p.cats.includes('apparel')) return 'apparel';
+  return 'part';
+}
+
 function qa(p) {
-  const bat = p.cats.includes('batteries'), tor = p.cats.includes('torches'), app = p.cats.includes('apparel');
+  const k = kind(p);
   const fit = p.features.find((f) => /g carts|g cart|cart sizes/i.test(f));
   const usb = /usb-c/i.test(p.features.join(' ') + p.body);
-  if (bat) return [
-    ['Will my cart fit?', 'It uses the standard 510 thread, so it works with standard 510 carts. ' + (fit || 'Check the details above for sizes.')],
-    ['Does anyone know what it is?', 'That is the point. It is designed to look like ' + (p.cats.includes('discreet') ? 'an everyday object, so it blends right in.' : 'a fun collectible first and a battery second.')],
-    ['How do I charge it?', (usb ? 'With USB-C, the same cable as most phones.' : 'See the full description for how this one powers up.') + ' Questions? WhatsApp us any time.']
+  const common = [
+    ['When will it get here?', 'It ships free from California and usually lands in 2–5 business days, in a plain box with no logos.'],
+    ['What if something’s wrong with it?', `Manufacturer defects are covered by our warranty. Text us at ${SITE.phone} and real people will sort it out.`]
   ];
-  if (tor) return [
-    ['Is butane included?', 'No. It is refillable with any standard butane can. Fill, wait a moment, then light.'],
-    ['Is it safe to carry?', (/safety lock/i.test(p.body + p.features.join(' ')) ? 'It has a safety lock so it will not ignite by accident. ' : '') + 'Always keep torches away from children.'],
-    ['What is it for?', 'Cooking and baking jobs like crème brûlée, searing and toasting, with a lot more style.']
+  if (k === 'battery') return [
+    ['Will my cart fit?', 'It uses the standard 510 thread, so standard 510 carts screw right in. ' + (fit ? fit + '.' : 'The details above list the sizes.')],
+    ['Will anyone know what it is?', 'That’s the whole idea. It’s designed to look like ' + (p.cats.includes('discreet') ? 'an everyday object, so it blends right in.' : 'a fun collectible first and a battery second.')],
+    ['How do I charge it?', (usb ? 'With USB-C, the same cable as most phones.' : 'The full description shows how this one powers up.')],
+    ['Is a cart included?', 'No, carts (oil) are sold separately. This is the battery only.'],
+    ...common
   ];
-  if (app) return [
+  if (k === 'torch') return [
+    ['Is butane included?', 'No. It refills with any standard butane can. Fill it, wait a moment, then light.'],
+    ['Is it safe to carry?', (/safety lock/i.test(p.body + p.features.join(' ')) ? 'It has a safety lock so it won’t ignite by accident. ' : '') + 'Always keep torches away from children.'],
+    ['What can I use it for?', 'Kitchen jobs like crème brûlée, searing and toasting, with a lot more style than a plain torch.'],
+    ...common
+  ];
+  if (k === 'apparel') return [
     ['How does it fit?', 'Unisex fit. Pick your size or style from the options above.'],
-    ['How fast does it ship?', 'From California in 2–5 business days.'],
-    ['Questions about sizing?', `Call, text or WhatsApp our team at ${SITE.phone}.`]
+    ['Not sure on sizing?', `Text or WhatsApp us at ${SITE.phone} and we’ll help you pick.`],
+    ...common
   ];
   const pack = p.title.match(/(\d)[- ]?Pack/i);
   return [
-    ['Will it work with mine?', 'This part is made for Smyle Labs products. The description above says which ones.'],
-    ['How many do I get?', pack ? `It is a ${pack[1]}-pack, as in the title.` : 'One per order. Add more with the quantity selector.'],
-    ['How fast does it ship?', 'From California in 2–5 business days.']
+    ['Will it work with mine?', 'It’s made for Smyle Labs products. The description above lists which ones.'],
+    ['How many do I get?', pack ? `It’s a ${pack[1]}-pack, like it says in the name.` : 'One per order. Use the quantity selector to add more.'],
+    ...common
   ];
+}
+
+function steps(p) {
+  const k = kind(p);
+  const im = (i) => (p.images[i] ? img(p.images[i], 700) : p.cut || img(p.images[0], 700));
+  if (k === 'battery') return [
+    [im(1), 'Pick your style', p.option && p.variants.length > 1 ? `${p.variants.length} ${p.option.toLowerCase()}s to choose from. Bundle and mix them.` : 'One look, done right. Add a second for the car.'],
+    ['/assets/inhaler/step-cart.webp', 'Screw in any 510 cart', 'Standard 510 thread. Twist it in and you’re set.', true],
+    [im(2), 'Press and go', 'Use it anywhere. When it’s low, plug it in to charge.']
+  ];
+  if (k === 'torch') return [
+    [im(1), 'Fill it with butane', 'Any standard butane can. Let it settle for a moment.'],
+    [im(2), 'Unlock and light', 'Flip the safety, press the trigger, adjust the flame.'],
+    [im(3), 'Cook with style', 'Crème brûlée, searing, toasting. Then lock it again.']
+  ];
+  return null;
 }
 
 const COMPANION = {
@@ -45,27 +76,27 @@ export default function ItemPage({ handle }) {
   const cart = useCart();
   const firstAvail = Math.max(0, p.variants.findIndex((v) => v.available));
   const [vi, setVi] = useState(firstAvail);
-  const [q, setQ] = useState(1);
-  const [im, setIm] = useState(0);
+  const [q, setQ] = useState(p.tiers && p.variants.some((x) => x.available) ? 2 : 1);
   const [heart, setHeart] = useState(false);
   const [added, setAdded] = useState(false);
   const [fbt, setFbt] = useState(true);
-  const [atcRef, showSticky] = useStickyWatch();
+  const [atcRef, show] = useWatch();
 
   const v = p.variants[vi];
-  const shots = (p.cut ? [{ src: p.cut, cut: true }] : []).concat(p.images.map((s) => ({ src: s, cut: false })));
-  const cur = shots[Math.min(im, shots.length - 1)];
-  const cat = CATEGORIES.find((c) => c.id === p.cats[0]);
-  const bat = p.cats.includes('batteries'), tor = p.cats.includes('torches');
-  const note = bat ? 'Cart (oil) not included · 21+ only · Ships in 2–5 business days' : tor ? 'Butane not included · 21+ only · Ships in 2–5 business days' : 'Ships from California in 2–5 business days';
-  const intro = p.intro || p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 260);
+  const shots = (p.cut ? [{ src: p.cut, cut: true, alt: p.name }] : []).concat(p.images.map((s) => ({ src: img(s, 1100), th: img(s, 160), alt: p.name })));
+  const cat = CATEGORIES.find((c) => c.id === p.cats[0]) || CATEGORIES[0];
+  const k = kind(p);
+  const intro = p.intro || p.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 240);
   const total = tierTotal(p, q, v.price);
-  const rating = p.reviews ? p.rating : SITE.rating;
+  const rating = p.reviews ? p.rating : 4.7;
   const rcount = p.reviews || SITE.reviewCount;
-  const sim = [byHandle('inhaler-cart-battery'), ...related(p, 3)].filter(Boolean);
-  const compH = COMPANION[p.handle] || (p.cats.includes('batteries') ? 'mini-plug-510-cart-battery' : p.cats.includes('torches') ? 'saber-shaped-gas-torch' : 'inhaler-cart-battery');
+  const sim = [byHandle('inhaler-cart-battery'), ...related(p, 3)].filter((x) => x && x.handle !== p.handle).slice(0, 4);
+  const compH = COMPANION[p.handle] || (k === 'battery' ? 'mini-plug-510-cart-battery' : k === 'torch' ? 'saber-shaped-gas-torch' : 'inhaler-cart-battery');
   const comp = compH !== p.handle ? byHandle(compH) : null;
   const compV = comp && (comp.variants.find((x) => x.available) || null);
+  const feats = p.features.length ? p.features.slice(0, 4) : [];
+  const st = steps(p);
+  const short = p.name.split(' ').slice(0, 3).join(' ');
 
   const add = () => {
     if (!v.available) return;
@@ -78,110 +109,146 @@ export default function ItemPage({ handle }) {
     if (fbt && comp && compV) cart.add({ variantId: compV.id, handle: comp.handle, name: comp.name, variant: compV.title, price: compV.price, img: thumb(comp, 300), qty: 1 });
   };
   const label = !v.available ? 'Sold out' : added ? `Added · ${money(total)}` : `Add to cart · ${money(total)}`;
+  const pct = p.tiers && q >= 2 ? p.tiers[q === 2 ? 0 : 1] : 0;
+  const rv = REVIEWS.store.filter((r) => !r.photo);
 
   return (
     <>
-      <section className="pd">
-        <div className="pd-l">
-          <p className="br"><Link href="/shop" style={{ textDecoration: 'none' }}>[Catalog]</Link> <Link href={`/shop?cat=${cat.id}`} style={{ textDecoration: 'none' }}>[{cat.name}]</Link> <b>[{p.name}]</b></p>
-          <div>{p.badge && <span className="tl-badge y" style={{ position: 'static', display: 'inline-block', marginBottom: 10 }}>{p.badge}</span>}<h1 className="up d1">{p.name}</h1></div>
-          <div className="price3"><b>{money(v.price)}</b>{v.compare > v.price && <><s className="g">{money(v.compare)}</s><span className="tl-badge y" style={{ position: 'static' }}>Save {money(v.compare - v.price)}</span></>}<span className="xs g">Free shipping from California</span></div>
-          <a className="sm" href="#reviews" style={{ textDecoration: 'none' }}>★★★★★ <b style={{ fontWeight: 600 }}>{rating}</b> · {rcount.toLocaleString()} {p.reviews ? 'reviews' : 'store reviews'}</a>
-          <p style={{ fontSize: 14, lineHeight: 1.55, color: '#3A3A3A' }}>{intro}</p>
-          {p.features.length > 0 && <ul className="dots3">{p.features.map((f) => <li key={f}>{f}</li>)}</ul>}
+      <div className="v-wrap">
+        <nav className="v-crumb" aria-label="Breadcrumb"><Link href="/">Home</Link>/<Link href="/shop">Shop</Link>/<Link href={`/shop?cat=${cat.id}`}>{cat.name}</Link>/<b>{p.name}</b></nav>
+        <section className="v-pd">
+          <Gallery shots={shots} />
 
-          {p.option && p.variants.length > 1 && (
-            <div>
-              <div className="sz" style={{ marginBottom: 10 }}><span className="sm">{p.option} · <b style={{ fontWeight: 600 }}>{v.title}</b></span><span className="xs g">{p.variants.length} options</span></div>
-              <div className="vr3" role="radiogroup" aria-label={p.option}>
-                {p.variants.map((x, i) => (
-                  <button key={x.id} className={i === vi ? 'on' : ''} role="radio" aria-checked={i === vi} onClick={() => { setVi(i); setAdded(false); }} style={!x.available ? { textDecoration: 'line-through', color: '#9A9A9A' } : undefined} title={x.available ? '' : 'Sold out'}>{x.title}</button>
-                ))}
+          <div className="v-buy">
+            <div className="chips">{p.badge && <span className="chip y">{p.badge}</span>}{v.available ? <span className="chip ok">● In stock</span> : <span className="chip">Sold out</span>}<span className="chip">Free shipping</span></div>
+            <h1>{p.name}</h1>
+            <a className="v-rate" href="#reviews"><span className="st">★★★★★</span><b style={{ fontWeight: 600 }}>{rating}</b><u>{rcount.toLocaleString()} {p.reviews ? 'reviews' : 'store reviews'}</u></a>
+            <div className="v-price"><b>{money(total)}</b>{pct > 0 && <><s>{money(v.price * q)}</s><span className="chip y">Save {pct}%</span></>}{!pct && v.compare > v.price && <><s>{money(v.compare)}</s><span className="chip y">Save {money(v.compare - v.price)}</span></>}{q > 1 && <span style={{ fontSize: 13, color: '#6B6B6B' }}>{money(total / q)} each</span>}</div>
+            <p className="lede">{intro}</p>
+            {feats.length > 0 && <ul className="v-checks">{feats.map((f) => <li key={f}><Check />{f}</li>)}</ul>}
+            <hr className="v-hr" />
+
+            {p.option && p.variants.length > 1 && (
+              <div>
+                <div className="v-opt-h"><span style={{ color: '#131313' }}>{p.option}: <b style={{ fontWeight: 600 }}>{v.title}</b></span><span>{p.variants.length} options</span></div>
+                <div className="v-vr" role="radiogroup" aria-label={p.option}>
+                  {p.variants.map((x, i) => <button key={x.id} className={(i === vi ? 'on' : '') + (x.available ? '' : ' so')} role="radio" aria-checked={i === vi} title={x.available ? '' : 'Sold out'} onClick={() => { setVi(i); setAdded(false); }}>{x.title}</button>)}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {p.tiers && v.available && (
-            <div>
-              <div className="sz" style={{ marginBottom: 8 }}><span className="sm">Bundle &amp; save</span><span className="xs g">Mix and match {p.option ? p.option.toLowerCase() + 's' : ''}</span></div>
-              <div className="tiers3" role="radiogroup" aria-label="Quantity">
-                {[1, 2, 3].map((n) => {
-                  const pct = n === 1 ? 0 : p.tiers[n - 2]; const tot = tierTotal(p, n, v.price);
-                  return (
-                    <button key={n} className={'t3' + (q === n ? ' on' : '')} role="radio" aria-checked={q === n} onClick={() => { setQ(n); setAdded(false); }}>
-                      {n === 2 && <span className="pop">Most popular</span>}{n === 3 && <span className="pop" style={{ background: '#FFD800', color: '#131313' }}>Best value</span>}
-                      <span className="rd" /><span><b>{n} × {p.name.split(' ').slice(0, 3).join(' ')}</b>{pct > 0 && <span className="sv">Save {pct}%</span>}<br /><span className="xs g">{money(tot / n)} each</span></span>
-                      <span className="pr">{money(tot)}{pct > 0 && <s>{money(v.price * n)}</s>}</span>
-                    </button>
-                  );
-                })}
+            {p.tiers && v.available && (
+              <div>
+                <div className="v-opt-h"><b style={{ fontWeight: 500 }}>Bundle &amp; save</b><span>Mix and match{p.option ? ' ' + p.option.toLowerCase() + 's' : ''}</span></div>
+                <div className="v-tiers" role="radiogroup" aria-label="Quantity">
+                  {[1, 2, 3].map((n) => {
+                    const pc = n === 1 ? 0 : p.tiers[n - 2]; const tot = tierTotal(p, n, v.price);
+                    return (
+                      <button key={n} className={'v-t' + (q === n ? ' on' : '')} role="radio" aria-checked={q === n} onClick={() => { setQ(n); setAdded(false); }}>
+                        {n === 2 && <span className="pop">Most popular</span>}{n === 3 && <span className="pop y">Best value</span>}
+                        <span className="rd" /><span><b>{n} × {short}</b>{pc > 0 && <span className="sv">Save {pc}%</span>}<span className="ea">{money(tot / n)} each</span></span>
+                        <span className="pr">{money(tot)}{pc > 0 && <s>{money(v.price * n)}</s>}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
-          <div className="qrow"><span className="sm">Quantity</span><div className="qty"><button onClick={() => setQ(Math.max(1, q - 1))} aria-label="Fewer">−</button><span>{q}</span><button onClick={() => setQ(q + 1)} aria-label="More">+</button></div></div>
-          <div className="atc3" ref={atcRef}><button className={'hb' + (heart ? ' on' : '')} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk full" onClick={add} disabled={!v.available} style={!v.available ? { opacity: 0.45, cursor: 'not-allowed' } : undefined}>{label}</button></div>
-          <DeliveryEstimate available={v.available} />
-          <TrustBadges returns60={p.returns60} />
-          {comp && compV && v.available && (
-            <div className="fbt">
-              <h4>Frequently bought together</h4>
-              <div className="fbt-row"><div className="im"><img src={thumb(p, 200)} alt="" /></div><span className="plus">+</span><div className="im"><img src={thumb(comp, 200)} alt="" /></div>
-                <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13, cursor: 'pointer', flex: 1 }}><input type="checkbox" checked={fbt} onChange={() => setFbt(!fbt)} style={{ marginTop: 3 }} /><span>{comp.name}<br /><span className="xs g">+{money(compV.price)}</span></span></label></div>
-              <button className="bo" onClick={addBoth}>{fbt ? `Add both · ${money(total + compV.price)}` : `Add to cart · ${money(total)}`}</button>
-            </div>
-          )}
-          <p className="xs g">{note}</p>
-          <Accordion items={[
-            ['Description', p.body || intro],
-            ['Shipping', 'Free shipping from California. Orders generally arrive in 2–5 business days within the US.'],
-            ['Help', `Real people answer. Call, text or WhatsApp ${SITE.phone}, or email ${SITE.email}.`]
-          ]} html first={-1} />
-        </div>
-        <div className="pd-r">
-          <div className="pd-th">
-            {shots.map((s, i) => <button key={s.src} className={i === im ? 'on' : ''} aria-label={'Image ' + (i + 1)} onClick={() => setIm(i)}><img className="sqt" src={s.cut ? s.src : img(s.src, 120)} alt="" /></button>)}
+            )}
+            {(!p.tiers || !v.available) && (
+              <div className="v-opt-h" style={{ alignItems: 'center', marginBottom: 0 }}><span style={{ color: '#131313' }}>Quantity</span><div className="v-qty"><button onClick={() => setQ(Math.max(1, q - 1))} aria-label="Fewer">−</button><span>{q}</span><button onClick={() => setQ(q + 1)} aria-label="More">+</button></div></div>
+            )}
+
+            <div className="v-atc" ref={atcRef}><Btn onClick={add} disabled={!v.available}>{label}</Btn><button className={'wish' + (heart ? ' on' : '')} aria-label="Save to wishlist" aria-pressed={heart} onClick={() => setHeart(!heart)}><Heart /></button></div>
+            <Ship available={v.available} />
+            <Trust returns60={p.returns60} />
+            {comp && compV && v.available && (
+              <div className="v-fbt">
+                <h4>Frequently bought together</h4>
+                <div className="row"><div className="im"><img src={thumb(p, 200)} alt="" /></div><span className="plus">+</span><div className="im"><img src={thumb(comp, 200)} alt="" /></div>
+                  <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13.5, cursor: 'pointer', flex: 1 }}><input type="checkbox" checked={fbt} onChange={() => setFbt(!fbt)} style={{ marginTop: 3, accentColor: '#131313' }} /><span>{comp.name}<br /><span style={{ color: '#6B6B6B', fontSize: 12.5 }}>+{money(compV.price)}</span></span></label></div>
+                <Btn kind="k" full onClick={addBoth}>{fbt ? `Add both · ${money(total + compV.price)}` : `Add to cart · ${money(total)}`}</Btn>
+              </div>
+            )}
+            <Details items={[
+              ['Description', p.body || intro],
+              ['Shipping & returns', 'Free shipping from California. Orders usually arrive in 2–5 business days within the US, in a plain box.' + (p.returns60 ? ' 60-day easy returns.' : ' Money-back guarantee.')],
+              ['Need help?', `Real people answer. Call, text or WhatsApp ${SITE.phone}, or email ${SITE.email}.`]
+            ]} />
+            <p style={{ fontSize: 12, color: '#6B6B6B', margin: 0 }}>{k === 'battery' ? 'Cart (oil) not included · 21+ only.' : k === 'torch' ? 'Butane not included · 21+ only.' : 'Ships from California in 2–5 business days.'}</p>
           </div>
-          <div className="pd-stage" style={{ background: '#F7F7F7' }}>
-            {cur.cut ? <img key={cur.src} className="m" src={cur.src} alt={p.name} /> : <img key={cur.src} className="sq" src={img(cur.src, 1100)} alt={p.name} />}
+        </section>
+      </div>
+
+      {/* 1. Meet it */}
+      <section className="v-sec v-dk">
+        <div className="v-wrap">
+          <Head dark tag="So, what is it?" title={<>Hey, meet the<br />{p.name}.</>} text={intro} />
+          <div className="v-meet">
+            <div className="col">{(feats.length ? feats : ['Free shipping from California', 'Warranty included']).slice(0, 2).map((f, i) => <div className="card" key={f} data-r style={{ '--d': i * 120 + 'ms' }}><span className="n">//0{i + 1}</span><b>{f}</b></div>)}</div>
+            <div className="art" data-r><img className={p.cut ? 'c' : ''} src={p.cut || img(p.images[0], 900)} alt={p.name} /></div>
+            <div className="col">{(feats.length > 2 ? feats.slice(2, 4) : ['Ships in a plain box', 'Real people support']).map((f, i) => <div className="card" key={f} data-r style={{ '--d': 240 + i * 120 + 'ms' }}><span className="n">//0{i + 3}</span><b>{f}</b></div>)}</div>
           </div>
         </div>
       </section>
 
-      <section className="sec3" id="reviews" style={{ borderTop: '1px solid #E7E7E7' }}>
-        <div className="sec3-h"><p className="br">[customers say]</p><span className="xs g">{p.reviews ? 'More from verified Smyle Labs buyers' : 'Store-wide reviews'}</span></div>
-        <div className="rv3">
-          <div className="rv3-sum"><span className="num">{rating}</span><p style={{ fontSize: 18, letterSpacing: 3, marginTop: 6 }}>★★★★★</p><p className="sm g" style={{ marginTop: 6 }}>{p.reviews ? `${p.reviews.toLocaleString()} reviews of the ${p.name}` : `${SITE.reviewCount.toLocaleString()} reviews across Smyle Labs`}</p></div>
-          {REVIEWS.store.filter((r) => !r.photo).slice(0, 2).map((r) => (
-            <div className="rv3-item" key={r.who}><div className="who"><span>{r.who}</span><span>★★★★★</span></div><span className="xs g">{r.product}</span><p>{r.text}</p></div>
-          ))}
+      {/* 2. How it works */}
+      {st && (
+        <section className="v-sec">
+          <div className="v-wrap">
+            <Head tag="Here’s how it works" title={<>Easy as 1, 2, 3.</>} text="No setup and nothing to learn. Here’s all there is to it." />
+            <div className="v-steps">
+              {st.map(([src, h, d, cut], i) => <div className="v-step" key={h} data-r style={{ '--d': i * 100 + 'ms' }}><div className="im"><img className={cut ? '' : 'f'} src={src} alt="" loading="lazy" /></div><span className="n">//0{i + 1}</span><h3 className="v-h3">{h}</h3><p>{d}</p></div>)}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3. Reviews */}
+      <section className={'v-sec' + (st ? ' t0' : '')} id="reviews" style={{ overflow: 'hidden', scrollMarginTop: 80 }}>
+        <div className="v-wrap">
+          <Head tag="What people are saying" title={p.reviews ? <>{p.reviews.toLocaleString()} reviews and<br />counting.</> : <>Loved by 12,660+<br />Smyle Labs customers.</>} text={<span className="v-rsum"><span className="big">{rating}</span><span><span className="st">★★★★★</span><br />{p.reviews ? `${p.reviews.toLocaleString()} verified reviews of this product` : 'Store-wide verified reviews'}</span></span>} />
         </div>
-        <div className="ugc4">
-          {[['inhaler', 'Inhaler'], ['lipbalm', 'Lip Balm'], ['moonwand', 'Moon Wand']].map(([f, n]) => <figure key={f}><img src={`/assets/ugc/${f}.webp`} alt={`Customer photo: ${n}`} loading="lazy" /><figcaption>★★★★★ Verified buyer · {n}</figcaption></figure>)}
+        <Marquee speed={55}>
+          <div className="v-rv">
+            {[['/assets/ugc/inhaler.webp', 'Inhaler 510'], ['/assets/ugc/lipbalm.webp', 'Lip Balm Cart Pen'], ['/assets/ugc/moonwand.webp', 'Moon Wand']].flatMap(([src, n], i) => [
+              <div className="v-rp" key={src}><img src={src} alt={`Customer photo: ${n}`} loading="lazy" /><div className="who"><b>Verified buyer</b><span>{n}</span></div></div>,
+              ...rv.slice(i * 2, i * 2 + 2).map((r) => <div className="v-rq" key={r.who + i}><span className="st">★★★★★</span><q>{r.text}</q><div className="who"><i>{r.who[0]}</i><div><b>{r.who}</b><span>Verified · {r.product}</span></div></div></div>)
+            ])}
+          </div>
+        </Marquee>
+      </section>
+
+      {/* 4. Conversation */}
+      <section className="v-sec v-white">
+        <div className="v-wrap">
+          <Head center tag="You asked, we answered" title={<>Before you buy,<br />let’s talk.</>} text={<>The questions people text us most about this one. Still curious? Message {SITE.phone}.</>} />
+          <ChatQA items={qa(p)} />
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 10, flexWrap: 'wrap', marginTop: 40 }} data-r><Btn href={SITE.whatsapp} kind="k" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</Btn>{v.available && <Btn onClick={() => { add(); }}>{added ? 'Added to cart ✓' : `Add to cart · ${money(total)}`}</Btn>}</div>
         </div>
       </section>
 
-      <section className="sec3" style={{ background: '#F7F7F7' }}>
-        <div className="sec3-h"><div><p className="br">[you might be wondering]</p><h2 className="up d2" style={{ marginTop: 8 }}>Before you buy</h2></div><p className="sm" style={{ maxWidth: 300 }}>Straight answers to what people ask us most about this one.</p></div>
-        <div className="talk3">{qa(p).map(([qq, a]) => <div key={qq}><b>{qq}</b><p>{a}</p></div>)}</div>
-      </section>
+      {/* 5. Inhaler cross-sell */}
+      {k === 'battery' && (
+        <section className="v-cta" style={{ marginTop: 12 }}>
+          <img src="/assets/inhaler/hand.webp" alt="" style={{ objectFit: 'contain', objectPosition: 'right bottom' }} />
+          <div className="in" data-r>
+            <Tag dark>Our #1 discreet battery</Tag>
+            <h2 className="v-h2">Want to hide your clouds too?</h2>
+            <p className="v-p">The Inhaler 510 has a filter built into the base. Buy 2, save 11%. Buy 3, save 16%.</p>
+            <div className="row"><Btn href="/products/inhaler-cart-battery" className="lg">Shop the Inhaler · $36.99</Btn></div>
+          </div>
+        </section>
+      )}
 
-      <section className="sec3">
-        {p.cats.includes('batteries') && (
-          <Link href="/products/inhaler-cart-battery" className="xsell">
-            <img src="/assets/inhaler/blush.webp" alt="" />
-            <div><p className="br" style={{ color: '#131313' }}>[our #1 discreet battery]</p><h3 className="up d3" style={{ marginTop: 6 }}>Hide your clouds too</h3><p className="sm" style={{ marginTop: 6 }}>The Inhaler has a built-in cloud filter. Buy 2 save 11%, buy 3 save 16%.</p></div>
-            <span className="bk">Shop the Inhaler · $36.99</span>
-          </Link>
-        )}
-        <div className="sec3-h"><h2 className="up d2">Pairs well with</h2><Link className="sm ul" href="/shop">All products</Link></div>
-        <div className="sim">
-          {sim.map((s) => <Tile key={s.handle} p={s} />)}
+      {/* 6. Pairs */}
+      <section className="v-sec">
+        <div className="v-wrap">
+          <Head tag="Pairs well with" title={<>You might also<br />like these.</>} btn="Shop all" href="/shop" />
+          <div className="v-grid4">{sim.map((s, i) => <PCard key={s.handle} p={s} delay={i * 80} />)}</div>
         </div>
       </section>
 
-
-      <StickyATC show={showSticky} img={thumb(p, 120)} name={p.name + (v.title ? ' · ' + v.title : '')} price={money(v.price)} label={label} onAdd={add} disabled={!v.available} />
-      <div className="mstick"><button className={'hb' + (heart ? ' on' : '')} style={{ width: 46, height: 46, border: 0, background: '#F7F7F7' }} aria-label="Save to wishlist" onClick={() => setHeart(!heart)}><Heart /></button><button className="bk" style={{ flex: 1 }} onClick={add} disabled={!v.available}>{label}</button></div>
+      <FloatBar show={show} img={thumb(p, 120)} name={p.name + (v.title ? ' · ' + v.title : '')} sub={`★ ${rating} · Free shipping · 2–5 days`} label={label} onAdd={add} disabled={!v.available} />
     </>
   );
 }

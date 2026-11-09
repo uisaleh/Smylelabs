@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import SiteForm, { Fld, Radios } from '@/components/SiteForm';
+import { PageHero } from '@/components/v5';
 import { SITE } from '@/lib/site';
 export const metadata = { title: 'Contact us', description: 'Text +1-805-660-9342, WhatsApp or email info@smylelabs.com. Monday–Friday, 10 AM–6 PM Pacific.' };
 
 export default function Contact() {
   return (
+    <>
+    <PageHero small tag="Contact us" title={<>Real people,<br />quick replies.</>} text={`Text, WhatsApp or email us. ${SITE.hours}.`} />
     <section className="pg3">
       <div className="pg3-l">
-        <p className="br">[contact us]</p>
-        <h1 className="up d1">Real people,<br />quick replies</h1>
+        <h2 className="v-h2">Talk to us</h2>
         <p className="lead">Our customer service is available {SITE.hours}. Fill out the form and our support team will get back to you within the same business day (except weekends).</p>
         <div className="ccard3">
           <a href={`sms:${SITE.phoneE164}`}><span>Text us</span><b>+1 805 660 9342</b></a>
@@ -28,5 +30,6 @@ export default function Contact() {
         </SiteForm>
       </div>
     </section>
+    </>
   );
 }

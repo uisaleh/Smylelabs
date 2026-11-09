@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteForm, { Fld } from '@/components/SiteForm';
+import { PageHero } from '@/components/v5';
 import { PRODUCTS } from '@/lib/catalog';
 import { SITE } from '@/lib/site';
 export const metadata = { title: 'Warranty claim', description: 'Smyle Labs covers manufacturer defects. Start a warranty claim for a repair, replacement or comparable product.' };
@@ -7,9 +8,8 @@ export const metadata = { title: 'Warranty claim', description: 'Smyle Labs cove
 export default function Warranty() {
   return (
     <>
+      <PageHero small tag="Warranty" title={<>We’ve got<br />your back.</>} text="Manufacturer defects are covered. Tell us what happened and we’ll repair, replace or send something comparable." />
       <section className="sec3" style={{ paddingBottom: 40 }}>
-        <p className="br">[warranty]</p>
-        <h1 className="up d1" style={{ marginTop: 12 }}>Smyle Labs<br />warranty info</h1>
         <p style={{ fontSize: 15, lineHeight: 1.55, color: '#3A3A3A', maxWidth: 560, marginTop: 18 }}>If you’ve submitted a warranty claim and haven’t heard back, or if you’re having trouble submitting one, <Link className="ul" href="/contact">contact our team</Link>.</p>
       </section>
       <section className="wrap-pad">

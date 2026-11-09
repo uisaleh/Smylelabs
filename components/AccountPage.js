@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { SITE } from '@/lib/site';
+import { PageHero } from '@/components/v5';
 
 // Customer accounts live on the store (Shopify today, WooCommerce later).
 // These forms post straight to the store's account endpoints, so sign-in is real.
@@ -13,10 +14,11 @@ export default function AccountPage() {
   const [tab, setTab] = useState(0);
   const tabs = ['Login', 'Create account', 'Wholesale'];
   return (
+    <>
+    <PageHero small tag="Account" title={<>Welcome back.</>} text="Sign in to track orders and reorder your favorites, or create an account in seconds." />
     <section className="pg3 half">
       <div>
-        <p className="br">[account]</p>
-        <h1 className="up d1" style={{ margin: '12px 0 24px' }}>{tab === 1 ? 'Create an account' : 'Customer login'}</h1>
+        <h2 className="v-h2" style={{ margin: '0 0 24px' }}>{tab === 1 ? 'Create an account' : 'Customer login'}</h2>
         <div className="tabs3" role="tablist" aria-label="Account">{tabs.map((t, i) => <button key={t} className={i === tab ? 'on' : ''} role="tab" aria-selected={i === tab} onClick={() => setTab(i)}>{t}</button>)}</div>
         {tab === 0 && (
           <form className="form3" method="post" action={`${SITE.url}/account/login`}>
@@ -47,5 +49,6 @@ export default function AccountPage() {
         <div style={{ position: 'absolute', left: 20, bottom: 20, right: 20, zIndex: 2, background: '#fff', padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}><span className="sm">Save favorites, track orders, check out faster.</span><Link className="sm ul" href="/shop">Shop</Link></div>
       </div>
     </section>
+    </>
   );
 }

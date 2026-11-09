@@ -1,7 +1,9 @@
 import './globals.css';
+import './v5.css';
 import { CartProvider } from '@/components/CartProvider';
 import { Header, Footer } from '@/components/Chrome';
 import AgeGate from '@/components/AgeGate';
+import { Motion } from '@/components/v5';
 
 export const metadata = {
   metadataBase: new URL('https://smylelabs.com'),
@@ -14,7 +16,7 @@ export const viewport = { width: 'device-width', initialScale: 1, themeColor: '#
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet" />
       </head>
       <body style={{ margin: 0 }}>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <CartProvider>
           <div className="p3">
             <Header />
@@ -30,6 +33,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
           <AgeGate />
+          <Motion />
         </CartProvider>
       </body>
     </html>
