@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'lavender-aromatherapy-mist-cartridge-kit': {
+    src: '/assets/cut/aroma-cart.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 40.8, cy: 21.7, x: 34, y: 22, title: '0.2mL aromatherapy cartridge', text: 'Fresh lavender with hints of sweet earthiness.' },
+      { cx: 40.8, cy: 57, x: 34, y: 72, title: 'Metal fan included', text: 'Comes in the kit with your cartridge.' },
+      { cx: 58.1, cy: 39.4, x: 66, y: 28, side: 'r', title: 'Plant-based formula', text: 'Made for moments of peace and balance.' },
+      { cx: 54.2, cy: 85.3, x: 66, y: 76, side: 'r', title: 'Twists onto your Penjamin', text: 'Standard thread, ready in seconds.' }
+    ]
+  },
   'permanent-marker-cart-battery-by-smyle-labs': {
     src: '/assets/cut/marker-pen.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [
