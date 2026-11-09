@@ -256,7 +256,8 @@
       "Preheat"
     ],
     "badge": "Fall limited",
-    "look": "Bag charm"
+    "look": "Bag charm",
+    "card": "/assets/cut/french-purse.webp"
   },
   "heartjamin-cart-battery": {
     "name": "Heartjamin Cart Battery",
