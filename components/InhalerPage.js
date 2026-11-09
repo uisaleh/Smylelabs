@@ -139,7 +139,7 @@ export default function InhalerPage({ handle }) {
           <Head tag="Here’s how it works" title={<>Ready in 3 steps.<br />Seriously, that’s it.</>} text="No tools, no setup, no learning curve. If you can uncap a pen, you can use the Inhaler." />
           <div className="v-steps">
             {[['step-cart', '01', 'Screw in your cart', 'Any standard 510 cart from 0.5 to 1.0g twists right into the base.'], ['step-cover', '02', 'Slide on the cover', 'Short cover for 0.5g, long cover for 1.0g. Now it just looks like an inhaler.'], ['step-filter', '03', 'Pull, exhale, done', 'Breathe out through the filter in the base. No cloud left behind.']].map(([f, n, h, d], i) => (
-              <div className="v-step" key={f} data-r style={{ '--d': i * 100 + 'ms' }}><div className="im"><img src={`/assets/inhaler/${f}.webp`} alt="" /></div><span className="n">//{n}</span><h3 className="v-h3">{h}</h3><p>{d}</p></div>
+              <div className="v-step" key={f} data-r style={{ '--d': i * 100 + 'ms' }}><div className="im"><img src={`/assets/inhaler/${f}.webp`} alt="" /></div><div className="tx"><span className="n">//{n}</span><h3 className="v-h3">{h}</h3><p>{d}</p></div></div>
             ))}
           </div>
         </div>

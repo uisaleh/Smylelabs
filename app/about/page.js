@@ -19,7 +19,7 @@ export default function About() {
       <section className="v-sec v-white">
         <div className="v-wrap">
           <Head tag="Our rule" title={<>Discreet first.<br />Fun always.</>} text="Every product has to pass two tests: nobody should guess what it is, and it should make you smile when you reach for it." />
-          <div className="v-met" style={{ gridTemplateColumns: 'repeat(4,minmax(0,1fr))' }}>
+          <div className="v-met four">
             <div className="col o"><div className="v-mc y" data-r><div><h3>Verified reviews</h3><p>From real buyers across the store.</p></div><span className="v-num" data-count="12660" data-suf="+">12,660+</span></div></div>
             <div className="col"><div className="v-mc ph" data-r style={{ '--d': '80ms', minHeight: 380 }}><img src="/assets/photo/moon-woman.webp" alt="Woman holding the Moon Wand battery" /><span className="chip">Moon Wand</span></div></div>
             <div className="col o"><div className="v-mc" data-r style={{ '--d': '160ms' }}><div><h3>Designs</h3><p>Everyday lookalikes, novelty pieces and torches.</p></div><span className="v-num" data-count={PRODUCTS.length}>{PRODUCTS.length}</span></div></div>

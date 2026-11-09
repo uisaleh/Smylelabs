@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/components/CartProvider';
 import { Heart } from '@/components/ui';
-import { Btn, ChatQA, Check, Gallery, Head, Marquee, PCard, Tag } from '@/components/v5';
+import { Btn, ChatQA, Check, Gallery, Head, Hotspots, Marquee, PCard, Tag } from '@/components/v5';
 import { Details, FloatBar, Ship, Trust, useWatch } from '@/components/pdp';
 import { CATEGORIES, byHandle, img, money, related, thumb, tierTotal } from '@/lib/catalog';
 import { REVIEWS, SITE } from '@/lib/site';
@@ -96,6 +96,10 @@ export default function ItemPage({ handle }) {
   const compV = comp && (comp.variants.find((x) => x.available) || null);
   const feats = p.features.length ? p.features.slice(0, 4) : [];
   const st = steps(p);
+  const DEF = [['Free shipping', 'From California in 2–5 business days.'], ['Warranty included', 'Manufacturer defects are on us.'], ['Plain, discreet box', 'No logos or labels on the outside.'], ['Real people support', `Text or WhatsApp ${SITE.phone}.`]];
+  const callouts = [...feats.map((f) => [f, '']), ...DEF].slice(0, 4);
+  const POS = p.cut ? [{ cx: 48, cy: 26, x: 33, y: 22 }, { cx: 48.5, cy: 70, x: 33, y: 76 }, { cx: 51.5, cy: 36, x: 67, y: 30, side: 'r' }, { cx: 51.5, cy: 76, x: 67, y: 72, side: 'r' }] : [{ cx: 40, cy: 28, x: 31, y: 22 }, { cx: 41, cy: 70, x: 31, y: 76 }, { cx: 60, cy: 34, x: 69, y: 30, side: 'r' }, { cx: 59, cy: 74, x: 69, y: 72, side: 'r' }];
+  const spots = callouts.map(([title, text], i) => ({ ...POS[i], title, text }));
   const short = p.name.split(' ').slice(0, 3).join(' ');
 
   const add = () => {
@@ -183,11 +187,7 @@ export default function ItemPage({ handle }) {
       <section className="v-sec v-dk">
         <div className="v-wrap">
           <Head dark tag="So, what is it?" title={<>Hey, meet the<br />{p.name}.</>} text={intro} />
-          <div className="v-meet">
-            <div className="col">{(feats.length ? feats : ['Free shipping from California', 'Warranty included']).slice(0, 2).map((f, i) => <div className="card" key={f} data-r style={{ '--d': i * 120 + 'ms' }}><span className="n">//0{i + 1}</span><b>{f}</b></div>)}</div>
-            <div className="art" data-r><img className={p.cut ? 'c' : ''} src={p.cut || img(p.images[0], 900)} alt={p.name} /></div>
-            <div className="col">{(feats.length > 2 ? feats.slice(2, 4) : ['Ships in a plain box', 'Real people support']).map((f, i) => <div className="card" key={f} data-r style={{ '--d': 240 + i * 120 + 'ms' }}><span className="n">//0{i + 3}</span><b>{f}</b></div>)}</div>
-          </div>
+          <Hotspots photo={!p.cut} src={p.cut || img(p.images[0], 1000)} alt={p.name} spots={spots} />
         </div>
       </section>
 
@@ -197,7 +197,7 @@ export default function ItemPage({ handle }) {
           <div className="v-wrap">
             <Head tag="Here’s how it works" title={<>Easy as 1, 2, 3.</>} text="No setup and nothing to learn. Here’s all there is to it." />
             <div className="v-steps">
-              {st.map(([src, h, d, cut], i) => <div className="v-step" key={h} data-r style={{ '--d': i * 100 + 'ms' }}><div className="im"><img className={cut ? '' : 'f'} src={src} alt="" loading="lazy" /></div><span className="n">//0{i + 1}</span><h3 className="v-h3">{h}</h3><p>{d}</p></div>)}
+              {st.map(([src, h, d, cut], i) => <div className="v-step" key={h} data-r style={{ '--d': i * 100 + 'ms' }}><div className="im"><img className={cut ? '' : 'f'} src={src} alt="" loading="lazy" /></div><div className="tx"><span className="n">//0{i + 1}</span><h3 className="v-h3">{h}</h3><p>{d}</p></div></div>)}
             </div>
           </div>
         </section>

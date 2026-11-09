@@ -95,9 +95,9 @@ export function PageHero({ tag, title, text, children, img, small }) {
 }
 
 /** Product image with hotspot callouts joined by animated lines. spots: [{x,y,cx,cy,side,title,text}] in % of the box. */
-export function Hotspots({ src, alt, spots, bg }) {
+export function Hotspots({ src, alt, spots, bg, photo }) {
   return (
-    <div className="v-hs" data-r style={bg ? { background: bg } : undefined}>
+    <div className={'v-hs' + (photo ? ' ph' : '')} data-r style={bg ? { background: bg } : undefined}>
       <img className="v-hs-img" src={src} alt={alt} />
       <svg className="v-hs-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {spots.map((s, i) => <polyline key={i} points={`${s.cx},${s.cy} ${s.mx ?? (s.cx + s.x) / 2},${s.y} ${s.x},${s.y}`} style={{ '--d': 300 + i * 180 + 'ms' }} vectorEffect="non-scaling-stroke" />)}
@@ -152,11 +152,11 @@ export function Motion() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (!e.isIntersecting) return;
-      const el = e.target; el.classList.add('in'); io.unobserve(el);
+      const el = e.target; el.setAttribute('data-in', ''); io.unobserve(el);
       if (el.dataset.count) countUp(el);
     }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     const seen = new WeakSet();
-    const scan = () => document.querySelectorAll('[data-r],[data-count],.v-hs,.v-stl-card').forEach((el) => { if (!seen.has(el)) { seen.add(el); reduce ? el.classList.add('in') : io.observe(el); } });
+    const scan = () => document.querySelectorAll('[data-r],[data-count],.v-hs,.v-stl-card').forEach((el) => { if (!seen.has(el)) { seen.add(el); reduce ? el.setAttribute('data-in', '') : io.observe(el); } });
     scan();
     const mo = new MutationObserver(scan); mo.observe(document.body, { childList: true, subtree: true });
 
@@ -170,7 +170,7 @@ export function Motion() {
       });
       document.querySelectorAll('[data-fan]').forEach((el) => {
         const r = el.getBoundingClientRect();
-        const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.9)));
+        const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.55)));
         el.style.setProperty('--p', reduce ? 1 : p.toFixed(3));
       });
       document.querySelectorAll('.v-stack').forEach((st) => {
