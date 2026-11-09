@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'robotjamin-cart-battery': {
+    src: '/assets/cut/robotjamin.webp',
+    spots: [
+      { cx: 44.2, cy: 20, x: 26, y: 22, title: '3 voltage settings', text: '3.0V, 3.4V or 3.7V with 3 quick clicks.' },
+      { cx: 37.6, cy: 80, x: 26, y: 76, title: 'Moving arms + gliding wheels', text: 'Plus robotic sounds and motion detection.' },
+      { cx: 56.8, cy: 41, x: 74, y: 28, side: 'r', title: 'LED robot eyes', text: 'It blinks, talks and vibes.' },
+      { cx: 53.8, cy: 74.7, x: 74, y: 72, side: 'r', title: 'Full remote control', text: '2.4GHz controller with walkie-talkie mode, up to 75 ft.' }
+    ]
+  },
   'moon-wand-cart-battery-limited-edition': {
     src: '/assets/cut/moon-wand.webp',
     spots: [

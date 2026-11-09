@@ -239,7 +239,8 @@
       "Free Mini Plug battery, Gold Edition",
       "Limited edition certificate"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/robotjamin.webp"
   },
   "french-purse-cart-battery": {
     "name": "French Purse Cart Battery",
