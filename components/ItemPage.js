@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'tung-tung-sahur-cart-battery': {
+    src: '/assets/cut/tung-tung-sahur.webp',
+    spots: [
+      { cx: 36, cy: 19, x: 29, y: 20, title: 'Moveable arms + accessories', text: 'Pose it, display it, or just let it vibe.' },
+      { cx: 42, cy: 87, x: 29, y: 76, title: 'Stands 7.5 inches tall', text: 'A collectible that stands on its own.' },
+      { cx: 64.3, cy: 30.3, x: 71, y: 24, side: 'r', title: 'USB-C rechargeable', text: 'Fast, easy charging so you’re never waiting.' },
+      { cx: 58.1, cy: 64.3, x: 71, y: 72, side: 'r', title: 'Universal 510 thread', text: 'Works with all standard cartridges.' }
+    ]
+  },
   'rocket-pop-cart-battery': {
     src: '/assets/cut/rocket-pop.webp',
     spots: [

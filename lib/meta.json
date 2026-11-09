@@ -144,7 +144,8 @@
       "Moveable arms + accessories",
       "Stands 7.5 inches tall"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "cut": "/assets/cut/tung-tung-sahur.webp"
   },
   "torch-penjamin-cart-battery-limited-edition": {
     "name": "Torch Penjamin Cart Battery",
