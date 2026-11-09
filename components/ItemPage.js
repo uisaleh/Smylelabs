@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'balisong-butterfly-cart-battery': {
+    src: '/assets/cut/balisong.webp',
+    spots: [
+      { cx: 46.7, cy: 45, x: 27, y: 26, title: 'Flip-open butterfly handle', text: 'Metal hardware reinforces the pivot points.' },
+      { cx: 38.7, cy: 63.3, x: 27, y: 72, title: 'Textured handle inserts', text: 'Extra grip, plus glow-in-the-dark on Glow Blue.' },
+      { cx: 53.2, cy: 19, x: 73, y: 20, side: 'r', title: 'Universal 510 thread', text: 'Works with most standard cartridges.' },
+      { cx: 57, cy: 57, x: 73, y: 70, side: 'r', title: '5.7 inches closed', text: 'Protects your cart and charges with USB-C.' }
+    ]
+  },
   'basketball-cart-battery-limited-edition': {
     src: '/assets/cut/basketball.webp',
     spots: [
