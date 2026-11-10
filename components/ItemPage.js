@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'cart-pen-replacement-tip': {
+    src: '/assets/cut/pen-tip.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 37, cy: 12, x: 22, y: 22, title: 'Hole at the top', text: 'Your aroma passes through privately and discreetly.' },
+      { cx: 37, cy: 78, x: 22, y: 76, title: 'Easy to clean', text: 'Rinse with warm water and dish soap.' },
+      { cx: 63, cy: 42.5, x: 78, y: 30, side: 'r', title: 'High-quality silicone', text: 'A leak-proof fit on your Penjamin Cart Pen.' },
+      { cx: 63, cy: 78, x: 78, y: 72, side: 'r', title: '2 tips per pack', text: 'Made for the new Penjamin by Smyle Labs.' }
+    ]
+  },
   'penjamin-cart-pen-ink-replacement': {
     src: '/assets/cut/pen-ink.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [
