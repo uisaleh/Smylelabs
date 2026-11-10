@@ -467,7 +467,8 @@
       "White LED glow",
       "Voltages: 2.6V, 3.0V, 3.6V",
       "Preheat function"
-    ]
+    ],
+    "card": "/assets/cut/wandjamin.webp"
   },
   "green-monster-flashlight-battery": {
     "name": "Green Monster Twist-On Battery",
@@ -505,7 +506,8 @@
       "accessories"
     ],
     "intro": "Two golden magnet replacement pieces for your carts. Twist onto the bottom of your cart (do not overtighten) and drop it into your Danksaber or Car Key.",
-    "features": []
+    "features": [],
+    "card": "/assets/cut/cart-magnet.webp"
   },
   "penjamin-car-key-tip-replacement": {
     "name": "Car Key Tip Replacement (2-Pack)",

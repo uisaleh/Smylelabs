@@ -67,6 +67,24 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'wandjamin-battery-by-smyle-labs': {
+    src: '/assets/cut/wandjamin.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 45.5, cy: 55, x: 34, y: 28, title: 'Glowing LED button', text: 'Hold it 10 seconds and something magical happens.' },
+      { cx: 42.5, cy: 71, x: 34, y: 76, title: '3 voltages + preheat', text: '2.6V, 3.0V or 3.6V. Cart not included.' },
+      { cx: 60, cy: 9.5, x: 66, y: 22, side: 'r', title: 'Any cart on top', text: 'All cartridges work on the tip of the wand.' },
+      { cx: 60, cy: 50.5, x: 66, y: 66, side: 'r', title: 'Magic slider hides your cart', text: 'Works with 1g and 0.5g carts.' }
+    ]
+  },
+  'penjamin-car-key-cartridge-magnet-replacement-2-pack': {
+    src: '/assets/cut/cart-magnet.webp',
+    spots: [
+      { cx: 35, cy: 36, x: 20, y: 24, title: 'Threaded inside', text: 'Twist onto the bottom of your cart. Don’t overtighten.' },
+      { cx: 35, cy: 66, x: 20, y: 76, title: 'Golden magnet piece', text: 'Holds your cart securely in place.' },
+      { cx: 65, cy: 36, x: 80, y: 24, side: 'r', title: '2 pieces per pack', text: 'One to use, one spare.' },
+      { cx: 65, cy: 66, x: 80, y: 76, side: 'r', title: 'For Danksaber + Car Key', text: 'Drop your cart into your Smyle Labs device.' }
+    ]
+  },
   'red-ball-flashlight-battery': {
     src: '/assets/cut/red-ball.webp',
     spots: [
