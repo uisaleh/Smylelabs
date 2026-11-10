@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'ghost-filter-cart-battery': {
+    src: '/assets/cut/ghosty.webp',
+    spots: [
+      { cx: 48, cy: 52.5, x: 34, y: 26, title: 'Glow-in-the-dark ghost', text: 'A spooky-cute body that lights up at night.' },
+      { cx: 43, cy: 82.5, x: 34, y: 76, title: 'About 3 inches tall', text: '76.2 mm without a cartridge.' },
+      { cx: 50, cy: 41, x: 66, y: 24, side: 'r', title: '510-thread battery', text: 'Twist on your cart. USB-C charging.' },
+      { cx: 58.9, cy: 76, x: 66, y: 70, side: 'r', title: 'Replaceable filter', text: 'Exhale through it. One filter included.' }
+    ]
+  },
   'foojamin-cart-battery-mystery-drop-limited-edition': {
     src: '/assets/cut/foojamin.webp',
     spots: [

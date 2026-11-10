@@ -13,7 +13,8 @@
       "Universal 510 thread",
       "USB-C rechargeable"
     ],
-    "badge": "Seasonal"
+    "badge": "Seasonal",
+    "card": "/assets/cut/ghosty.webp"
   },
   "controller-adapter-510-cart-battery": {
     "name": "Controller Adapter 510 Cart Battery",
