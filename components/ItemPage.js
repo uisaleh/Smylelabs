@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'tnt-penjamin-cart-battery-limited-edition': {
+    src: '/assets/cut/tnt.webp',
+    spots: [
+      { cx: 45.3, cy: 52, x: 34, y: 26, title: 'Pixelated TNT design', text: 'A retro gaming look that starts conversations.' },
+      { cx: 43.9, cy: 72, x: 34, y: 76, title: 'Just 2.1 inches wide', text: 'Palm-sized, small enough to fit in your hand.' },
+      { cx: 50.5, cy: 48, x: 66, y: 24, side: 'r', title: 'Universal 510 thread', text: 'Twist on any standard cart.' },
+      { cx: 58, cy: 81, x: 66, y: 72, side: 'r', title: 'USB-C charging', text: 'Power up with the same cable as your phone.' }
+    ]
+  },
   'downstem-soaker-by-smyle-labs': {
     src: '/assets/cut/downstem-soaker.webp',
     spots: [

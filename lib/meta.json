@@ -179,7 +179,8 @@
       "Universal 510 thread",
       "USB-C charging"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/tnt.webp"
   },
   "moon-wand-cart-battery-limited-edition": {
     "name": "Moon Wand Cart Battery",
