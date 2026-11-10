@@ -26,8 +26,8 @@ const STACK = [
   { h: 'cup-cart-510-battery-by-mrs-puff', name: 'Cup Cart by Mrs. Puff', chip: 'New', text: 'A tiny tumbler with a digital screen. Your cart sits right where the straw goes.', pts: ['Digital voltage display', 'Pocket-sized tumbler design', 'Standard 510 thread'], art: '/assets/photo/p-cup.webp', from: 'From $24.99' }
 ];
 const LOOKS = [
-  ['Inhaler', '/assets/ugc/inhaler.webp'], ['Car key', '/assets/photo/p-carkey.webp'], ['Pen', '/assets/photo/p-pen.webp'],
-  ['Lip balm', '/assets/ugc/lipbalm.webp'], ['Tumbler', '/assets/photo/p-cup.webp'], ['Bag charm', '/assets/photo/purse-girl.webp']
+  ['Inhaler', '/assets/inhaler/teal.webp'], ['Car key', '/assets/cut/carkey.webp'], ['Pen', '/assets/cut/marker-pen.webp'],
+  ['Lip balm', '/assets/cut/lipbalm.webp'], ['Tumbler', '/assets/cut/cup.webp'], ['Bag charm', '/assets/cut/pursejamin.webp']
 ];
 const FAN = [
   ['01', 'Pick your disguise', 'An inhaler, a car key, a pen, a tumbler. 46 designs.', '/assets/cut/carkey.webp'],
@@ -231,7 +231,7 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-            <div className="v-hl-img" data-r>
+            <div className="v-hl-img cut" data-r>
               {LOOKS.map(([n, src], i) => <img key={n} className={look === i ? 'on' : ''} src={src} alt={look === i ? `${n} style battery` : ''} loading="lazy" />)}
               <div className="pills"><span>Free shipping</span><span>Mix &amp; match colors</span><span>Ships in 2–5 days</span></div>
             </div>
