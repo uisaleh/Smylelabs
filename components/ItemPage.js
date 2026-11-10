@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'ninja-flashlight-battery': {
+    src: '/assets/cut/ninja.webp',
+    spots: [
+      { cx: 46, cy: 14, x: 28, y: 22, title: 'Twist-on 510', text: 'Twist your accessories right onto the top.' },
+      { cx: 41, cy: 75, x: 28, y: 76, title: 'Ninja head design', text: 'Discreet, stylish and a real conversation starter.' },
+      { cx: 53, cy: 14, x: 72, y: 28, side: 'r', title: 'Flashlight bulb included', text: 'Powerful, clear light for nighttime adventures.' },
+      { cx: 59, cy: 79, x: 72, y: 72, side: 'r', title: 'Extended battery life', text: 'Fewer recharges, built to last.' }
+    ]
+  },
   'cart-pen-replacement-tip': {
     src: '/assets/cut/pen-tip.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [
@@ -239,12 +248,12 @@ const MEET = {
     ]
   },
   'herbie-flashlight-battery': {
-    src: 'https://cdn.shopify.com/s/files/1/0788/1791/9289/files/CartFriendsHerbiewFlashlight.png?width=1000',
+    src: '/assets/cut/herbie.webp',
     spots: [
-      { cx: 49.5, cy: 31, x: 33, y: 24, title: 'Twist-on 510', text: 'Twist your accessories right onto the top.' },
-      { cx: 47, cy: 48, x: 33, y: 74, title: 'Charming character design', text: 'A round, pink buddy that wins hearts.' },
-      { cx: 50.5, cy: 22, x: 67, y: 22, side: 'r', title: 'Flashlight bulb included', text: 'Twist it on and light up any space.' },
-      { cx: 55, cy: 77, x: 67, y: 74, side: 'r', title: 'Compact and lightweight', text: 'Easy to carry everywhere you go.' }
+      { cx: 47.7, cy: 11, x: 22, y: 20, title: 'Twist-on 510', text: 'Twist your accessories right onto the top.' },
+      { cx: 41, cy: 82, x: 22, y: 78, title: 'Charming character design', text: 'A round, pink buddy that wins hearts.' },
+      { cx: 52.5, cy: 10.5, x: 78, y: 26, side: 'r', title: 'Flashlight bulb included', text: 'Twist it on and light up any space.' },
+      { cx: 64, cy: 50, x: 78, y: 70, side: 'r', title: 'Compact and lightweight', text: 'Easy to carry everywhere you go.' }
     ]
   },
   'herb-grinder-slot-machine': {

@@ -529,7 +529,8 @@
       "Twist-on 510",
       "Flashlight bulb included",
       "Compact and lightweight"
-    ]
+    ],
+    "card": "/assets/cut/herbie.webp"
   },
   "car-key-penjamin-by-smyle-labs": {
     "name": "Car Key Penjamin",
@@ -579,7 +580,8 @@
       "Flashlight bulb included",
       "Universally compatible",
       "Long battery life"
-    ]
+    ],
+    "card": "/assets/cut/ninja.webp"
   },
   "danksaber": {
     "name": "Danksaber Penjamin",
