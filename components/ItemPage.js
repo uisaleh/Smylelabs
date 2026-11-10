@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'penjamin-cart-pen-ink-replacement': {
+    src: '/assets/cut/pen-ink.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 41, cy: 31, x: 20, y: 24, title: 'Twist, pull, push in', text: 'Twist off the old tip, push the new one in.' },
+      { cx: 25.3, cy: 87, x: 20, y: 76, title: 'Smooth ballpoint tip', text: 'Your Penjamin writes like new again.' },
+      { cx: 72.3, cy: 12, x: 80, y: 24, side: 'r', title: '2 refills per pack', text: 'Keep writing without buying a new battery.' },
+      { cx: 59, cy: 66.5, x: 80, y: 72, side: 'r', title: 'Made for the new Penjamin', text: 'Designed for the Penjamin Cart Pen by Smyle Labs.' }
+    ]
+  },
   'wandjamin-battery-by-smyle-labs': {
     src: '/assets/cut/wandjamin.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [

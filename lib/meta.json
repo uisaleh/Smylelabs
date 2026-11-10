@@ -614,7 +614,8 @@
       "accessories"
     ],
     "intro": "Replacement ink cartridges for the Penjamin Cart Pen. Twist and pull off the bottom, insert the new ink, and you are writing again.",
-    "features": []
+    "features": [],
+    "card": "/assets/cut/pen-ink.webp"
   },
   "cart-pen-replacement-tip": {
     "name": "Penjamin Cart Pen Replacement Tip (2-Pack)",
