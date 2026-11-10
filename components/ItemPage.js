@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'pixel-torch': {
+    src: '/assets/cut/pixel-torch.webp',
+    spots: [
+      { cx: 47.4, cy: 48.3, x: 22, y: 30, title: 'Reliable ignition', text: 'High-performance and easy to light.' },
+      { cx: 55.4, cy: 80, x: 22, y: 76, title: 'Secret stash drawer', text: 'A hidden compartment slides out of the base.' },
+      { cx: 61.2, cy: 27, x: 78, y: 22, side: 'r', title: 'Adjustable flame', text: 'Great for cooking, baking and the kitchen.' },
+      { cx: 64.6, cy: 50, x: 78, y: 66, side: 'r', title: 'Yellow, Red or Blue', text: 'Pixel-art design, durable and portable.' }
+    ]
+  },
   'torch-penjamin-cart-battery-limited-edition': {
     src: '/assets/cut/torch-penjamin.webp',
     spots: [

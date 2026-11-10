@@ -658,7 +658,8 @@
       "Adjustable flame",
       "Durable construction",
       "Reliable ignition"
-    ]
+    ],
+    "card": "/assets/cut/pixel-torch.webp"
   },
   "inhaler-3-pack-replaceable-filters": {
     "name": "Inhaler Filters, 3-Pack",
