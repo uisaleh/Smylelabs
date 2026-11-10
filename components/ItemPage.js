@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'danksaber': {
+    src: '/assets/cut/danksaber.webp',
+    spots: [
+      { cx: 49, cy: 40, x: 36, y: 26, title: 'Light-up saber design', text: 'Lights up the night. Your cart hides inside.' },
+      { cx: 49, cy: 80, x: 36, y: 76, title: 'USB-C cable included', text: 'Charge up and take it anywhere.' },
+      { cx: 51, cy: 16, x: 64, y: 22, side: 'r', title: 'Fits 0.5g to 2g carts', text: 'Standard 510 cartridges (not included).' },
+      { cx: 51, cy: 69, x: 64, y: 68, side: 'r', title: 'Adjustable voltage + preheat', text: 'Set it with the button. Tailor every session to you.' }
+    ]
+  },
   'penjamin-car-key-tip-replacement': {
     src: '/assets/cut/carkey-tip.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
     spots: [
