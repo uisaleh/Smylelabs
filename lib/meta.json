@@ -690,5 +690,22 @@
       "4 voltages: 2.2V, 2.7V, 3.1V, 3.6V",
       "USB-C charging"
     ]
+  },
+  "football-cart-battery-limited-edition": {
+    "name": "Football Cart Battery",
+    "cats": [
+      "batteries",
+      "novelty",
+      "limited"
+    ],
+    "intro": "A collectible mini football battery, compact and rechargeable, with a standard 510-thread connection. Just 2.5 inches tall.",
+    "features": [
+      "Mini football design",
+      "Standard 510 thread",
+      "USB-C rechargeable",
+      "2.5 inches tall"
+    ],
+    "badge": "Limited",
+    "card": "/assets/cut/football.webp"
   }
 }

@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'football-cart-battery-limited-edition': {
+    src: '/assets/cut/football.webp',
+    spots: [
+      { cx: 49.5, cy: 44, x: 36, y: 26, title: 'Standard 510 thread', text: 'Easy to use with compatible cartridges.' },
+      { cx: 47, cy: 83, x: 36, y: 76, title: 'Just 2.5 inches tall', text: 'Small enough to carry or display anywhere.' },
+      { cx: 50.5, cy: 63, x: 64, y: 34, side: 'r', title: 'Mini football design', text: 'That playful Smyle Labs look, game-day ready.' },
+      { cx: 54.5, cy: 72, x: 64, y: 74, side: 'r', title: 'USB-C rechargeable', text: 'Powering up is simple.' }
+    ]
+  },
   'pixel-torch': {
     src: '/assets/cut/pixel-torch.webp',
     spots: [
