@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'downstem-soaker-by-smyle-labs': {
+    src: '/assets/cut/downstem-soaker.webp',
+    spots: [
+      { cx: 51, cy: 24, x: 36, y: 22, title: 'Clean in 30 seconds', text: 'Insert, add your cleaner, shake. Done.' },
+      { cx: 48.5, cy: 83, x: 36, y: 76, title: 'Reusable + eco-friendly', text: 'A durable alternative to makeshift solutions.' },
+      { cx: 52.5, cy: 39, x: 64, y: 28, side: 'r', title: 'Silicone cap included', text: 'Seals the tube so you can shake it.' },
+      { cx: 52.5, cy: 62, x: 64, y: 70, side: 'r', title: 'High-quality glass tube', text: 'Designed to last. No more broken stems.' }
+    ]
+  },
   'danksaber': {
     src: '/assets/cut/danksaber.webp',
     spots: [

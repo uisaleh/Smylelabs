@@ -641,7 +641,8 @@
       "Durable glass construction",
       "Compact and portable",
       "Fits a range of downstem sizes"
-    ]
+    ],
+    "card": "/assets/cut/downstem-soaker.webp"
   },
   "pixel-torch": {
     "name": "Pixel Kitchen Torch",
