@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'penjamin-car-key-tip-replacement': {
+    src: '/assets/cut/carkey-tip.webp', bg: 'radial-gradient(55% 65% at 50% 52%,#6A6A66 0%,#2E2E2C 60%,#161616 100%)',
+    spots: [
+      { cx: 35.4, cy: 21, x: 20, y: 22, title: 'Hole at the top', text: 'Your aroma passes through privately and discreetly.' },
+      { cx: 34.5, cy: 63, x: 20, y: 76, title: 'Easy to clean', text: 'Rinse with warm water and dish soap.' },
+      { cx: 64, cy: 30, x: 80, y: 26, side: 'r', title: 'High-quality plastic', text: 'A leak-proof fit on your Penjamin Car Key.' },
+      { cx: 64, cy: 79.5, x: 80, y: 74, side: 'r', title: '2 tips per pack', text: 'Made for the new Penjamin Car Key by Smyle Labs.' }
+    ]
+  },
   'ninja-flashlight-battery': {
     src: '/assets/cut/ninja.webp',
     spots: [
