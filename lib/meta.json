@@ -77,7 +77,8 @@
       "Standard 510 thread",
       "USB-C charging"
     ],
-    "badge": "Mystery drop"
+    "badge": "Mystery drop",
+    "card": "/assets/cut/foojamin.webp"
   },
   "cup-cart-510-battery-by-mrs-puff": {
     "name": "Cup Cart 510 Battery by Mrs. Puff",

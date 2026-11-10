@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'foojamin-cart-battery-mystery-drop-limited-edition': {
+    src: '/assets/cut/foojamin.webp',
+    spots: [
+      { cx: 49.9, cy: 27.5, x: 18, y: 22, title: 'Standard 510 thread', text: 'Cartridge not included.' },
+      { cx: 27.6, cy: 74, x: 18, y: 78, title: 'About 3 inches tall', text: 'Pocket-sized, with a solid, premium feel.' },
+      { cx: 59.4, cy: 50, x: 82, y: 22, side: 'r', title: '1 of 5 mystery colors', text: 'Black, Red, Grey, Blue or the rare Orange.' },
+      { cx: 69.6, cy: 62, x: 82, y: 78, side: 'r', title: 'Power button + USB-C', text: 'Built-in button and convenient charging.' }
+    ]
+  },
   'controller-adapter-510-cart-battery': {
     src: '/assets/cut/controller-adapter.webp',
     spots: [
