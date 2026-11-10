@@ -163,7 +163,8 @@
       "All standard 510 carts",
       "USB-C charging"
     ],
-    "badge": "Limited"
+    "badge": "Limited",
+    "card": "/assets/cut/torch-penjamin.webp"
   },
   "tnt-penjamin-cart-battery-limited-edition": {
     "name": "TNT Penjamin Cart Battery",

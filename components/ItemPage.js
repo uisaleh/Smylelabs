@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'torch-penjamin-cart-battery-limited-edition': {
+    src: '/assets/cut/torch-penjamin.webp',
+    spots: [
+      { cx: 40.4, cy: 42.5, x: 30, y: 26, title: 'Pixel-inspired torch design', text: 'A game-style look that stands out.' },
+      { cx: 40.4, cy: 77, x: 30, y: 76, title: 'Compact 4.4 inches', text: 'A solid grip that fits in your pocket.' },
+      { cx: 55.4, cy: 25.7, x: 70, y: 22, side: 'r', title: 'Top-load 510 thread', text: 'Works with all standard 510 carts.' },
+      { cx: 52.2, cy: 56.5, x: 70, y: 66, side: 'r', title: 'USB-C charging', text: 'Fast, convenient power-ups.' }
+    ]
+  },
   'tnt-penjamin-cart-battery-limited-edition': {
     src: '/assets/cut/tnt.webp',
     spots: [
