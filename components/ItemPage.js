@@ -67,6 +67,15 @@ function steps(p) {
 
 // Custom artwork + callouts for the "So, what is it?" section.
 const MEET = {
+  'controller-adapter-510-cart-battery': {
+    src: '/assets/cut/controller-adapter.webp',
+    spots: [
+      { cx: 49.5, cy: 39.4, x: 18, y: 22, title: 'Twist in your cart', text: 'Standard 510 thread, right on your controller.' },
+      { cx: 46, cy: 65, x: 18, y: 78, title: 'Magnetic mount', text: 'Plates attach to your controller. Snap the battery on.' },
+      { cx: 64.2, cy: 30.5, x: 82, y: 22, side: 'r', title: 'Stays out of your grip', text: 'Lightweight, close at hand during gameplay.' },
+      { cx: 50.2, cy: 69.8, x: 82, y: 78, side: 'r', title: '4 voltages + preheat', text: 'USB-C charging and a 300 mAh battery.' }
+    ]
+  },
   'football-cart-battery-limited-edition': {
     src: '/assets/cut/football.webp',
     spots: [

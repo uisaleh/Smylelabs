@@ -29,7 +29,8 @@
       "Four voltages: 2.5V, 2.7V, 3.0V, 3.6V"
     ],
     "badge": "New",
-    "look": "Controller"
+    "look": "Controller",
+    "card": "/assets/cut/controller-adapter.webp"
   },
   "herb-grinder-slot-machine": {
     "name": "Herb Grinder Slot Machine",
